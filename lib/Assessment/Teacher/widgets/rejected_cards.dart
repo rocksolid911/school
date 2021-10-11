@@ -39,7 +39,7 @@ class _RejectedCardState extends State<RejectedCard> {
                                 topRight: Radius.circular(10),
                                 bottomRight: Radius.circular(10))),
                         child: Container(
-                          height: _appConfig.rH(20),
+                          height: _appConfig.rH(20.5),
                           width: _appConfig.rW(85.5),
                           child: Stack(
                             children: [
@@ -57,7 +57,7 @@ class _RejectedCardState extends State<RejectedCard> {
                                     top: _appConfig.rHP(3.5),
                                     left: _appConfig.rWP(16)),
                                 child: Text("Physics",
-                                    style: TextStyle(
+                                    style: TextStyle( color: Color(0xFF666161),
                                         fontWeight: FontWeight.w900,
                                         fontSize: 11)),
                               ),
@@ -109,9 +109,9 @@ class _RejectedCardState extends State<RejectedCard> {
                                     child: Text(
                                         "Assignment Name",
                                         style: TextStyle(
-                                            color: Colors.grey,
-                                            fontWeight: FontWeight.w900,
-                                            fontSize:9)),
+                                            color: Color(0xFF858383),
+                                            fontWeight:FontWeight.w700,
+                                            fontSize: 9)),
                                   ),
 
                                 //  color: Color(0xFF2E2E2E),
@@ -139,13 +139,13 @@ class _RejectedCardState extends State<RejectedCard> {
                                   children: [
                                     Text("Remarks",
                                         style: TextStyle(
-                                            fontWeight: FontWeight.w900,
-                                            fontSize: 9,
-                                            color: Colors.grey,)),
+                                            color: Color(0xFF858383),
+                                            fontWeight:FontWeight.w700,
+                                            fontSize: 9)),
                                     Padding(
                                       padding: EdgeInsets.only(
                                           top: _appConfig.rHP(0),
-                                          left: _appConfig.rWP(15),
+                                          left: _appConfig.rWP(14.5),
                                           bottom: _appConfig.rWP(0)),
                                       child: Text("Data changed,Grammar Mistake",
                                           style: TextStyle(  color: Color(0xFF2E2E2E),
@@ -164,10 +164,10 @@ class _RejectedCardState extends State<RejectedCard> {
                                 child: Row(
                                   children: [
                                     Text("Class",
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w900,
-                                          fontSize: 9,
-                                          color: Colors.grey,)),
+                                        style:TextStyle(
+                                            color: Color(0xFF858383),
+                                            fontWeight:FontWeight.w700,
+                                            fontSize: 9)),
                                     Padding(
                                       padding: EdgeInsets.only(
                                           top: _appConfig.rHP(0),
@@ -186,15 +186,14 @@ class _RejectedCardState extends State<RejectedCard> {
 
                               Padding(
                                 padding: EdgeInsets.only( top: _appConfig.rHP(18),
-                                    left: _appConfig.rWP(49)),
+                                    left: _appConfig.rWP(50.5)),
                                 child: Row(
                                   children: [
                                     Text("Exam Type",
                                         style: TextStyle(
-                                            fontWeight:
-                                            FontWeight.w900,
-                                            fontSize: 9,
-                                            color: Colors.grey)),SizedBox(width:_appConfig.rW(2)),
+                                            color: Color(0xFF858383),
+                                            fontWeight:FontWeight.w700,
+                                            fontSize: 9)),SizedBox(width:_appConfig.rW(2)),
                                     Text("Summative",
                                         style: TextStyle(
                                             fontWeight:

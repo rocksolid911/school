@@ -35,7 +35,7 @@ class _ConductedCardState extends State<ConductedCard> {
                             ),
                           ),
                           child: Container(
-                            height: _appConfig.rH(20),
+                            height: _appConfig.rH(20.5),
                             width: _appConfig.rW(85.5),
                             child: Stack(
                               children: [
@@ -55,7 +55,7 @@ class _ConductedCardState extends State<ConductedCard> {
                                       top: _appConfig.rHP(3.5),
                                       left: _appConfig.rWP(15.5)),
                                   child: Text("Tamil",
-                                      style: TextStyle(
+                                      style: TextStyle( color: Color(0xFF666161),
                                           fontWeight: FontWeight.w900,
                                           fontSize: 11)),
                                 ),
@@ -77,9 +77,25 @@ class _ConductedCardState extends State<ConductedCard> {
                                   top: _appConfig.rH(0.5),
                                 ),
                                 Positioned(
-                                  child: Text("33/40"),
-                                  right:  _appConfig.rW(6.5),
-                                  top: _appConfig.rH(9.5),
+                                  child: RichText(
+                                    text: TextSpan(text:   "33",
+                                        style: TextStyle(
+                                            color: Color(0xFF2E2E2E),
+                                            fontWeight: FontWeight.w900,
+                                            fontSize: 15),
+                                        children: [TextSpan(text: "/80",
+                                          style: TextStyle(
+                                              color: Color(0xFFB8B6B6),
+                                              fontWeight: FontWeight.w900,
+                                              fontSize: 10.5),)]
+
+                                    ),
+
+
+
+                                  ),
+                                  right:  _appConfig.rW(3.5),
+                                  top: _appConfig.rH(12.5),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(
@@ -93,29 +109,33 @@ class _ConductedCardState extends State<ConductedCard> {
                                   ),
                                 ),
 
+
                                 Row(
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.only(
-                                          top: _appConfig.rHP(10),
-                                          left: _appConfig.rWP(5),
-                                          bottom: _appConfig.rWP(5)),
-                                      child: Text("Timing",
-                                          style: TextStyle(
-                                              color: Color(0xFF2E2E2E),
-                                              fontWeight: FontWeight.w900,
-                                              fontSize: 10.5)),
-                                    ),
+                                        padding: EdgeInsets.only(
+                                            top: _appConfig.rHP(10),
+                                            left: _appConfig.rWP(5),
+                                            bottom: _appConfig.rWP(5)),
+                                        child: Text(
+                                            "Answering Type",
+                                            style:  TextStyle(
+                                                color: Color(0xFF858383),
+                                                fontWeight:FontWeight.w700,
+                                                fontSize: 9))),
+
+                                    //  color: Color(0xFF2E2E2E),
                                     Padding(
                                       padding: EdgeInsets.only(
                                           top: _appConfig.rHP(10),
                                           left: _appConfig.rWP(2),
                                           bottom: _appConfig.rWP(5)),
-                                      child: Text("02:00 pm - 03:00 pm",
+                                      child: Text(
+                                          "Attach Pdf",
                                           style: TextStyle(
-                                              color: Colors.grey,
+                                              color: Color(0xFF2E2E2E),
                                               fontWeight: FontWeight.w900,
-                                              fontSize: 10.5)),
+                                              fontSize: 9)),
                                     ),
                                   ],
                                 ),
@@ -127,22 +147,50 @@ class _ConductedCardState extends State<ConductedCard> {
                                       bottom: _appConfig.rWP(0)),
                                   child: Row(
                                     children: [
-                                      Text("Max.Mark",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w900,
-                                            fontSize: 9.5,
-                                            color: Color(0xFF2E2E2E),
-                                          )),
+                                      Text("Exam Type",
+                                          style:  TextStyle(
+                                              color: Color(0xFF858383),
+                                              fontWeight:FontWeight.w700,
+                                              fontSize: 9)),
                                       Padding(
                                         padding: EdgeInsets.only(
                                             top: _appConfig.rHP(0),
-                                            left: _appConfig.rWP(4),
+                                            left: _appConfig.rWP(3),
                                             bottom: _appConfig.rWP(0)),
-                                        child: Text("50",
-                                            style: TextStyle(
-                                                color: Colors.grey,
+                                        child: Text("Summative",
+                                            style: TextStyle(  color: Color(0xFF2E2E2E),
                                                 fontWeight: FontWeight.w900,
-                                                fontSize: 9.5)),
+                                                fontSize: 9)),
+                                      ),
+
+
+                                    ],
+                                  ),
+                                ),
+
+
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: _appConfig.rHP(18),
+                                      left: _appConfig.rWP(5),
+                                      bottom: _appConfig.rWP(0)),
+                                  child: Row(
+                                    children: [
+                                      Text("Class",
+                                          style:  TextStyle(
+                                              color: Color(0xFF858383),
+                                              fontWeight:FontWeight.w700,
+                                              fontSize: 9)),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            top: _appConfig.rHP(0),
+                                            left: _appConfig.rWP(1),
+                                            bottom: _appConfig.rWP(0)),
+                                        child: Text("10",
+                                            style: TextStyle(
+                                                color: Color(0xFF2E2E2E),
+                                                fontWeight: FontWeight.w900,
+                                                fontSize: 9)),
                                       ),
                                     ],
                                   ),
@@ -150,15 +198,46 @@ class _ConductedCardState extends State<ConductedCard> {
 
                                 Padding(
                                   padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(16.5),
-                                      left: _appConfig.rWP(56)),
+                                      top: _appConfig.rHP(18),
+                                      left: _appConfig.rWP(17.5),
+                                      bottom: _appConfig.rWP(0)),
+                                  child: Row(
+                                    children: [
+                                      Text("Section",
+                                          style:  TextStyle(
+                                              color: Color(0xFF858383),
+                                              fontWeight:FontWeight.w700,
+                                              fontSize: 9)),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            top: _appConfig.rHP(0),
+                                            left: _appConfig.rWP(1),
+                                            bottom: _appConfig.rWP(0)),
+                                        child: Text("A",
+                                            style: TextStyle(
+                                                color: Color(0xFF2E2E2E),
+                                                fontWeight: FontWeight.w900,
+                                                fontSize: 9)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+
+
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: _appConfig.rHP(18),
+                                      left: _appConfig.rWP(55)),
                                   child: Row(
                                     children: [
                                       Text("Exam ",
                                           style: TextStyle(
-                                              fontWeight: FontWeight.w900,
-                                              fontSize: 9.5,
-                                              color: Colors.grey)),
+                                              color: Color(0xFF858383),
+                                              fontWeight:FontWeight.w700,
+                                              fontSize: 9)),
+
+                                      SizedBox(width: _appConfig.rW(2),),
                                       Text("21 Oct 2020",
                                           style: TextStyle(
                                               fontWeight: FontWeight.w900,

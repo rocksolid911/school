@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gradientbutton/appconfig.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/models/allassjson.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/providers/alljsondataprovider.dart';
+
 import 'package:provider/provider.dart';
 
 class Draftcard extends StatefulWidget {
@@ -50,7 +51,7 @@ class _DraftcardState extends State<Draftcard> {
                                     topRight: Radius.circular(10),
                                     bottomRight: Radius.circular(10))),
                             child: Container(
-                              height: _appConfig.rH(20),
+                              height: _appConfig.rH(20.5),
                               width: _appConfig.rW(85.5),
                               child: Stack(
                                 children: [
@@ -69,7 +70,7 @@ class _DraftcardState extends State<Draftcard> {
                                         top: _appConfig.rHP(3.5),
                                         left: _appConfig.rWP(16)),
                                     child: Text("math",
-                                        style: TextStyle(
+                                        style: TextStyle( color: Color(0xFF666161),
                                             fontWeight: FontWeight.w900,
                                             fontSize: 11)),
                                   ),
@@ -112,8 +113,8 @@ class _DraftcardState extends State<Draftcard> {
                                             bottom: _appConfig.rWP(5)),
                                         child: Text("Assignment Name",
                                             style: TextStyle(
-                                                color: Colors.grey,
-                                                fontWeight: FontWeight.w900,
+                                                color: Color(0xFF858383),
+                                                fontWeight:FontWeight.w700,
                                                 fontSize: 9)),
                                       ),
 
@@ -142,14 +143,14 @@ class _DraftcardState extends State<Draftcard> {
                                       children: [
                                         Text("Answering Type",
                                             style: TextStyle(
-                                              fontWeight: FontWeight.w900,
+                                              fontWeight:   FontWeight.w700,
                                               fontSize: 9,
-                                              color: Colors.grey,
+                                              color: Color(0xFF858383),
                                             )),
                                         Padding(
                                           padding: EdgeInsets.only(
                                               top: _appConfig.rHP(0),
-                                              left: _appConfig.rWP(6),
+                                              left: _appConfig.rWP(5.5),
                                               bottom: _appConfig.rWP(0)),
                                           child: Text(
                                               "Answering type",
@@ -170,9 +171,9 @@ class _DraftcardState extends State<Draftcard> {
                                       children: [
                                         Text("Class",
                                             style: TextStyle(
-                                              fontWeight: FontWeight.w900,
+                                              fontWeight:   FontWeight.w700,
                                               fontSize: 9,
-                                              color: Colors.grey,
+                                              color: Color(0xFF858383),
                                             )),
                                         Padding(
                                           padding: EdgeInsets.only(
@@ -192,14 +193,15 @@ class _DraftcardState extends State<Draftcard> {
                                   Padding(
                                     padding: EdgeInsets.only(
                                         top: _appConfig.rHP(18),
-                                        left: _appConfig.rWP(49)),
+                                        left: _appConfig.rWP(50.5)),
                                     child: Row(
                                       children: [
                                         Text("Exam Type",
                                             style: TextStyle(
-                                                fontWeight: FontWeight.w900,
-                                                fontSize: 9,
-                                                color: Colors.grey)),
+                                              fontWeight:   FontWeight.w700,
+                                              fontSize: 9,
+                                              color: Color(0xFF858383),
+                                            )),
                                         SizedBox(width: _appConfig.rW(2)),
                                         Text("Summative",
                                             style: TextStyle(

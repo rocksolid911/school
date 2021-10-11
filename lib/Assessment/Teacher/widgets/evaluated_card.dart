@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
 import 'package:gradientbutton/appconfig.dart';
-import 'package:phygitalz_project_1/Assessment/Teacher/models/evaluateexam.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/providers/evedataprovider.dart';
+import 'package:phygitalz_project_1/Assessment/Teacher/screens/evaluateexam.dart';
+
 import 'package:provider/provider.dart';
 
 class EvalutaedCard extends StatefulWidget {
@@ -41,7 +42,7 @@ class _EvalutaedCardState extends State<EvalutaedCard> {
                               ),
                             ),
                             child: Container(
-                              height: _appConfig.rH(20),
+                              height: _appConfig.rH(20.5),
                               width: _appConfig.rW(85.5),
                               child: Stack(
                                 children: [
@@ -61,15 +62,14 @@ class _EvalutaedCardState extends State<EvalutaedCard> {
                                         top: _appConfig.rHP(3.5),
                                         left: _appConfig.rWP(15.5)),
                                     child: Text("Tamil",
-                                        style: TextStyle(
+                                        style: TextStyle( color: Color(0xFF666161),
                                             fontWeight: FontWeight.w900,
                                             fontSize: 11)),
                                   ),
                                   Positioned(
                                     child: ElevatedButton(
                                       onPressed: () {
-                                        Navigator.pushNamed(
-                                            this.context, "/studentreview");
+                                        Navigator.push(this.context, MaterialPageRoute(builder: (context)=>EvExam()));
                                       },
                                       style: ButtonStyle(
                                           shape: MaterialStateProperty.all<
@@ -87,10 +87,10 @@ class _EvalutaedCardState extends State<EvalutaedCard> {
                                     //child: Text("33/40"),
                                     child: GradientCircularProgressIndicator(
                                       gradient: Gradients.coralCandyGradient,
-                                      radius: 80,
+                                      radius: 85,
                                       value: 60,
                                     ),
-                                    right: _appConfig.rW(4),
+                                    right: _appConfig.rW(2),
                                     top: _appConfig.rH(6),
                                   ),
                                   Positioned(
@@ -113,30 +113,32 @@ class _EvalutaedCardState extends State<EvalutaedCard> {
                                       color: Colors.black,
                                     ),
                                   ),
-
                                   Row(
                                     children: [
                                       Padding(
-                                        padding: EdgeInsets.only(
-                                            top: _appConfig.rHP(10),
-                                            left: _appConfig.rWP(5),
-                                            bottom: _appConfig.rWP(5)),
-                                        child: Text("Timing",
-                                            style: TextStyle(
-                                                color: Color(0xFF2E2E2E),
-                                                fontWeight: FontWeight.w900,
-                                                fontSize: 10.5)),
-                                      ),
+                                          padding: EdgeInsets.only(
+                                              top: _appConfig.rHP(10),
+                                              left: _appConfig.rWP(5),
+                                              bottom: _appConfig.rWP(5)),
+                                          child: Text(
+                                              "Answering Type",
+                                              style:  TextStyle(
+                                                  color: Color(0xFF858383),
+                                                  fontWeight:FontWeight.w700,
+                                                  fontSize: 9))),
+
+                                      //  color: Color(0xFF2E2E2E),
                                       Padding(
                                         padding: EdgeInsets.only(
                                             top: _appConfig.rHP(10),
                                             left: _appConfig.rWP(2),
                                             bottom: _appConfig.rWP(5)),
-                                        child: Text("02:00 pm - 03:00 pm",
+                                        child: Text(
+                                            "Attach Pdf",
                                             style: TextStyle(
-                                                color: Colors.grey,
+                                                color: Color(0xFF2E2E2E),
                                                 fontWeight: FontWeight.w900,
-                                                fontSize: 10.5)),
+                                                fontSize: 9)),
                                       ),
                                     ],
                                   ),
@@ -148,22 +150,50 @@ class _EvalutaedCardState extends State<EvalutaedCard> {
                                         bottom: _appConfig.rWP(0)),
                                     child: Row(
                                       children: [
-                                        Text("Max.Mark",
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.w900,
-                                              fontSize: 9.5,
-                                              color: Color(0xFF2E2E2E),
-                                            )),
+                                        Text("Exam Type",
+                                            style:  TextStyle(
+                                                color: Color(0xFF858383),
+                                                fontWeight:FontWeight.w700,
+                                                fontSize: 9)),
                                         Padding(
                                           padding: EdgeInsets.only(
                                               top: _appConfig.rHP(0),
-                                              left: _appConfig.rWP(4),
+                                              left: _appConfig.rWP(3),
                                               bottom: _appConfig.rWP(0)),
-                                          child: Text("50",
-                                              style: TextStyle(
-                                                  color: Colors.grey,
+                                          child: Text("Summative",
+                                              style: TextStyle(  color: Color(0xFF2E2E2E),
                                                   fontWeight: FontWeight.w900,
-                                                  fontSize: 9.5)),
+                                                  fontSize: 9)),
+                                        ),
+
+
+                                      ],
+                                    ),
+                                  ),
+
+
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        top: _appConfig.rHP(18),
+                                        left: _appConfig.rWP(5),
+                                        bottom: _appConfig.rWP(0)),
+                                    child: Row(
+                                      children: [
+                                        Text("Class",
+                                            style:  TextStyle(
+                                                color: Color(0xFF858383),
+                                                fontWeight:FontWeight.w700,
+                                                fontSize: 9)),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: _appConfig.rHP(0),
+                                              left: _appConfig.rWP(1),
+                                              bottom: _appConfig.rWP(0)),
+                                          child: Text("10",
+                                              style: TextStyle(
+                                                  color: Color(0xFF2E2E2E),
+                                                  fontWeight: FontWeight.w900,
+                                                  fontSize: 9)),
                                         ),
                                       ],
                                     ),
@@ -171,15 +201,44 @@ class _EvalutaedCardState extends State<EvalutaedCard> {
 
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        top: _appConfig.rHP(16.5),
-                                        left: _appConfig.rWP(56)),
+                                        top: _appConfig.rHP(18),
+                                        left: _appConfig.rWP(17.5),
+                                        bottom: _appConfig.rWP(0)),
+                                    child: Row(
+                                      children: [
+                                        Text("Section",
+                                            style:  TextStyle(
+                                                color: Color(0xFF858383),
+                                                fontWeight:FontWeight.w700,
+                                                fontSize: 9)),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: _appConfig.rHP(0),
+                                              left: _appConfig.rWP(1),
+                                              bottom: _appConfig.rWP(0)),
+                                          child: Text("A",
+                                              style: TextStyle(
+                                                  color: Color(0xFF2E2E2E),
+                                                  fontWeight: FontWeight.w900,
+                                                  fontSize: 9)),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        top: _appConfig.rHP(18),
+                                        left: _appConfig.rWP(54)),
                                     child: Row(
                                       children: [
                                         Text("Exam ",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w900,
                                                 fontSize: 9.5,
-                                                color: Colors.grey)),
+                                              color: Color(0xFF858383),)),
+                                        SizedBox(width: _appConfig.rW(2),),
                                         Text("21 Oct 2020",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w900,
