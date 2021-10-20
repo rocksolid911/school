@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:sizer/sizer.dart';
 import 'package:path_provider/path_provider.dart' as pathProvider;
 import 'package:phygitalz_project_1/Assessment/Student/provider/Questionjson/QuestionProvider.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/providers/alljsondataprovider.dart';
@@ -28,6 +29,7 @@ Future<void> main() async {
   Directory directory = await pathProvider.getApplicationDocumentsDirectory();
   Hive.init(directory.path);
   //Hive.registerAdapter(AssignmentTAdapter());
+
   runApp(MyApp());
 }
 // void main(){
@@ -80,40 +82,46 @@ class _MyAppState extends State<MyApp> {
           create: (context) => ButtonProvider(),
         ),
       ],
-      child: MaterialApp(
-        home: FutureBuilder(
-          future: getUserData(),
-          builder: (context, snapshot) {
-            print(snapshot);
-            switch (snapshot.connectionState) {
-              case ConnectionState.none:
-              case ConnectionState.waiting:
-                return CircularProgressIndicator();
-              //return SplashScreen();
-              default:
-                if (snapshot.hasError) {
-                  return Text('Error: ${snapshot.error}');
-                } else if (snapshot.data == null)
-                //splash screen should be here
-                {
-                  return LogIn();
-                } else {
-                  // UserPreferences.instance.removeUser();
-                  //return HomeScreenStudent(user: snapshot.data);
-                  return SplashScreen(user: snapshot.data);
-                  // return CircularView();
-                }
-            }
-          },
-        ),
-        //initialRoute: "/",
-        //  routes: {
-        //    '/login': (context) => LogIn(),
-        // '/HssScreen': (context) => HomeScreenStudent(),
-        //
-        //  },
-        onGenerateRoute: RouteGenerator.generateRoute,
+      child: Sizer(
+        builder: (context,orientation, deviceType) {
+          return MaterialApp(
+
+                home: FutureBuilder(
+                  future: getUserData(),
+                  builder: (context, snapshot) {
+                    print(snapshot);
+                    switch (snapshot.connectionState) {
+                      case ConnectionState.none:
+                      case ConnectionState.waiting:
+                        return CircularProgressIndicator();
+                      //return SplashScreen();
+                      default:
+                        if (snapshot.hasError) {
+                          return Text('Error: ${snapshot.error}');
+                        } else if (snapshot.data == null)
+                        //splash screen should be here
+                        {
+                          return LogIn();
+                        } else {
+                          // UserPreferences.instance.removeUser();
+                          //return HomeScreenStudent(user: snapshot.data);
+                          return SplashScreen(user: snapshot.data);
+                          // return CircularView();
+                        }
+                    }
+                  },
+                ),
+                //initialRoute: "/",
+                //  routes: {
+                //    '/login': (context) => LogIn(),
+                // '/HssScreen': (context) => HomeScreenStudent(),
+                //
+                //  },
+                onGenerateRoute: RouteGenerator.generateRoute,
+              );
+        }
       ),
+
     );
   }
 }

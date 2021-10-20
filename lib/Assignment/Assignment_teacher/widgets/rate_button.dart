@@ -15,6 +15,7 @@ class _RateButtonState extends State<RateButton> {
   bool selectedButton10A = false;
   bool selectedButton9A = false;
   bool selectedButton9B = false;
+  bool selectedButton9c = false;
   @override
   Widget build(BuildContext context) {
     _appConfig = AppConfig(context);
@@ -26,7 +27,7 @@ class _RateButtonState extends State<RateButton> {
             //padding: EdgeInsets.zero,
             child: CustomAnimatedButton(
               height: _appConfig.rH(4.5),
-              width: _appConfig.rW(28),
+              width: _appConfig.rW(25),
               text: "Excellent",
               startcolor: 0xFFDF003D,
               midcolor: 0xFFDF0075,
@@ -41,6 +42,7 @@ class _RateButtonState extends State<RateButton> {
                   selectedButton10A = false;
                   selectedButton9B = false;
                   selectedButton9A = false;
+                  selectedButton9c = false;
                 });
               }, fntsize: 12,
             ),
@@ -49,7 +51,7 @@ class _RateButtonState extends State<RateButton> {
             padding: const EdgeInsets.all(8.0),
             child: CustomAnimatedButton(
               height: _appConfig.rH(4.5),
-              width: _appConfig.rW(28),
+              width: _appConfig.rW(25),
               text: "Very Good",
               selected: selectedButton10A,
               startcolor: 0xFFDF003D,
@@ -64,6 +66,7 @@ class _RateButtonState extends State<RateButton> {
                   selectedButton10A = true;
                   selectedButton9B = false;
                   selectedButton9A = false;
+                  selectedButton9c = false;
                 });
               }, fntsize: 12,
             ),
@@ -87,6 +90,7 @@ class _RateButtonState extends State<RateButton> {
                   selectedButton10A = false;
                   selectedButton9B = false;
                   selectedButton9A = true;
+                  selectedButton9c = false;
                 });
               }, fntsize: 12,
             ),
@@ -110,6 +114,31 @@ class _RateButtonState extends State<RateButton> {
                   selectedButton10A = false;
                   selectedButton9B = true;
                   selectedButton9A = false;
+                  selectedButton9c = false;
+                });
+              }, fntsize: 12,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CustomAnimatedButton(
+              height: _appConfig.rH(4.5),
+              width: _appConfig.rW(19),
+              text: "Very poor",
+              selected: selectedButton9c,
+              startcolor: 0xFFDF003D,
+              midcolor: 0xFFDF0075,
+              endcolor: 0xFFDF00AD,
+              radius: _appConfig.rW(5),
+              activecolor: Colors.white,
+              inactivecolor: Colors.pinkAccent,
+              onTap: (){
+                setState(() {
+                  selectedButton10B = false;
+                  selectedButton10A = false;
+                  selectedButton9B = false;
+                  selectedButton9A = false;
+                  selectedButton9c = true;
                 });
               }, fntsize: 12,
             ),

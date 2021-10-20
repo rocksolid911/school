@@ -6,6 +6,7 @@ import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/data
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/subjecticon.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class PendingCard extends StatefulWidget {
   final String type;
@@ -23,7 +24,7 @@ class _PendingCardState extends State<PendingCard> {
     DataProvider provider = Provider.of<DataProvider>(context);
     _appConfig = AppConfig(context);
     return Container(
-      height: _appConfig.rH(70),
+      height: 70.h,
       child: FutureBuilder(
         future: provider.bYStatAndType(type: widget.type, stat: widget.stat),
         builder: (context, AsyncSnapshot<List<Assignment>> projectSnap) {
@@ -37,6 +38,172 @@ class _PendingCardState extends State<PendingCard> {
               shrinkWrap: true,
               itemCount: projectSnap.data.length,
               itemBuilder: (builder, index) {
+                // return Container(
+                //   child: Column(
+                //     children: [
+                //       Card(
+                //         elevation: 5,
+                //         shape: RoundedRectangleBorder(
+                //             borderRadius: BorderRadius.only(
+                //                 topLeft: Radius.circular(10),
+                //                 topRight: Radius.circular(10),
+                //                 bottomRight: Radius.circular(10))),
+                //         child: Container(
+                //           height: _appConfig.rH(19),
+                //           width: _appConfig.rW(86),
+                //           child: Stack(
+                //             children: [
+                //               Padding(
+                //                 padding: EdgeInsets.only(
+                //                     top: _appConfig.rHP(1.8),
+                //                     left: _appConfig.rWP(4)),
+                //                 child: SubjectIcon(subject: projectSnap.data[index].s40Subject,)
+                //               ), // color: HexColor("#f55f5f"),
+                //
+                //               Padding(
+                //                 padding: EdgeInsets.only(
+                //                     top: _appConfig.rHP(3.2),
+                //                     left: _appConfig.rWP(18)),
+                //                 child: Text("${projectSnap.data[index].s40Subject}",
+                //                     style: TextStyle(
+                //                         fontWeight: FontWeight.w900,
+                //                         fontSize: 14)),
+                //               ),
+                //               Padding(
+                //                   padding: EdgeInsets.only(
+                //                       top: _appConfig.rHP(2.8),
+                //                       left: _appConfig.rWP(62)),
+                //                   child: GestureDetector(
+                //                     child: SvgPicture.asset(
+                //                       "assets/images/Preview_icon _Assignment.svg",
+                //                       height: _appConfig.rH(2.5),
+                //                       width: _appConfig.rW(2.5),
+                //                     ),
+                //                     onTap: () {
+                //                       Navigator.pushNamed(this.context,
+                //                           "/assignment_teacher");
+                //                     },
+                //                   )),
+                //               Padding(
+                //                   padding: EdgeInsets.only(
+                //                       top: _appConfig.rHP(2.8),
+                //                       left: _appConfig.rWP(74)),
+                //                   child: GestureDetector(
+                //                     child: SvgPicture.asset(
+                //                       "assets/images/Edit_Icon.svg",
+                //                       height: _appConfig.rH(2.5),
+                //                       width: _appConfig.rW(2.5),
+                //                     ),
+                //                     onTap: () {
+                //                       Navigator.pushNamed(
+                //                           this.context, "/create_assignment");
+                //                     },
+                //                   ),
+                //               ),
+                //
+                //               // Padding(
+                //               //     padding: EdgeInsets.only(
+                //               //         top: _appConfig.rHP(2.8),
+                //               //         left: _appConfig.rWP(75)),
+                //               //     child: SvgPicture.asset(
+                //               //       "assets/images/Delete Icon.svg",
+                //               //       height: _appConfig.rH(2.5),
+                //               //       width: _appConfig.rW(2.5),
+                //               //     )),
+                //
+                //               Padding(
+                //                 padding: EdgeInsets.only(
+                //                     top: _appConfig.rHP(7),
+                //                     bottom: _appConfig.rWP(5)),
+                //                 child: Divider(
+                //                   thickness: 0.5,
+                //                   endIndent: 17,
+                //                   indent: 17,
+                //                   color: Colors.black,
+                //                 ),
+                //               ),
+                //
+                //               Padding(
+                //                 padding: EdgeInsets.only(
+                //                     top: _appConfig.rHP(9),
+                //                     left: _appConfig.rWP(5),
+                //                     bottom: _appConfig.rWP(5)),
+                //                 child: Text(
+                //                     "${projectSnap.data[index].s40AssignmentDetails}",
+                //                     style: TextStyle(
+                //                         color: Colors.black54,
+                //                         fontWeight: FontWeight.w900,
+                //                         fontSize: 14,
+                //                     fontFamily: 'Barlow')),
+                //               ),
+                //               // Padding(
+                //               //   padding: EdgeInsets.only(
+                //               //       top: _appConfig.rHP(13.5),
+                //               //       left: _appConfig.rWP(5.5),
+                //               //       bottom: _appConfig.rWP(5)),
+                //               //   child: Row(
+                //               //     children: [
+                //               //       Text("Attached Assignment Documents",
+                //               //           style: TextStyle(
+                //               //               color: Colors.black54,
+                //               //               fontWeight: FontWeight.w900,
+                //               //               fontSize: 10)),
+                //               //     ],
+                //               //   ),
+                //               // ),
+                //               // Padding(
+                //               //   padding:  EdgeInsets.only(top: _appConfig.rHP(15.7),left: _appConfig.rHP(2.7)),
+                //               //   //child: SvgPicture.asset("assets/documt.svg",height:_appConfig.rH(1.7),width: _appConfig.rW(2),),
+                //               //   child:GestureDetector(child: Icon(Icons.delete),onTap: (){},),
+                //               // ),
+                //               Padding(
+                //                 padding: EdgeInsets.only(
+                //                     top: _appConfig.rHP(16),
+                //                     left: _appConfig.rHP(2.5)),
+                //                 child: Text("Document Name.Pdf ",
+                //                     style: TextStyle(
+                //                         color: Colors.black, fontSize: 12,fontFamily: 'Barlow')),
+                //               ),
+                //
+                //               // Padding(
+                //               //   padding: EdgeInsets.only(
+                //               //       top: _appConfig.rHP(15.7),
+                //               //       left: _appConfig.rHP(18.3)),
+                //               //   child: SvgPicture.asset(
+                //               //     "assets/images/Delete Icon.svg",
+                //               //     height: _appConfig.rH(1.5),
+                //               //     width: _appConfig.rW(1.5),
+                //               //   ),
+                //               // ),
+                //
+                //               Padding(
+                //                 padding: EdgeInsets.only(
+                //                     left: _appConfig.rWP(59),
+                //                     top: _appConfig.rHP(16)),
+                //                 child: Row(
+                //                   children: [
+                //                     Text("Due ",
+                //                         style: TextStyle(
+                //                             fontWeight: FontWeight.w900,
+                //                             fontSize: 12,
+                //                             color: Colors.grey,fontFamily: 'Barlow')),
+                //                     Text("20 July 2020",
+                //                         style: TextStyle(
+                //                             fontWeight: FontWeight.w900,
+                //                             fontSize: 12,fontFamily: 'Barlow')),
+                //                   ],
+                //                 ),
+                //               ),
+                //             ],
+                //           ),
+                //         ),
+                //       ),
+                //       SizedBox(
+                //         height: 6,
+                //       ),
+                //     ],
+                //   ),
+                // );
                 return Container(
                   child: Column(
                     children: [
@@ -48,71 +215,67 @@ class _PendingCardState extends State<PendingCard> {
                                 topRight: Radius.circular(10),
                                 bottomRight: Radius.circular(10))),
                         child: Container(
-                          height: _appConfig.rH(17),
-                          width: _appConfig.rW(86),
+                          height: 24.h,
+                          width: 90.w,
                           child: Stack(
                             children: [
                               Padding(
                                 padding: EdgeInsets.only(
-                                    top: _appConfig.rHP(1.8),
-                                    left: _appConfig.rWP(4)),
-                                child: SubjectIcon(appConfig: _appConfig,subject: projectSnap.data[index].s40Subject,)
+                                    top: 2.h,
+                                    left: 2.5.h),
+                                child: SubjectIcon(subject: projectSnap.data[index].s40Subject,),
                               ), // color: HexColor("#f55f5f"),
 
                               Padding(
                                 padding: EdgeInsets.only(
-                                    top: _appConfig.rHP(3.2),
-                                    left: _appConfig.rWP(18)),
-                                child: Text("${projectSnap.data[index].s40Subject}",
+                                    top: 2.8.h,
+                                    left: 9.h),
+                                child: Text(
+                                    "${projectSnap.data[index].s40Subject}",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w900,
-                                        fontSize: 14)),
+                                        fontSize: 14.sp)),
                               ),
-                              Padding(
-                                  padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(2.8),
-                                      left: _appConfig.rWP(62)),
-                                  child: GestureDetector(
-                                    child: SvgPicture.asset(
-                                      "assets/images/Preview_icon _Assignment.svg",
-                                      height: _appConfig.rH(2.5),
-                                      width: _appConfig.rW(2.5),
-                                    ),
-                                    onTap: () {
-                                      Navigator.pushNamed(this.context,
-                                          "/assignment_teacher");
-                                    },
-                                  )),
-                              Padding(
-                                  padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(2.8),
-                                      left: _appConfig.rWP(74)),
-                                  child: GestureDetector(
-                                    child: SvgPicture.asset(
-                                      "assets/images/Edit_Icon.svg",
-                                      height: _appConfig.rH(2.5),
-                                      width: _appConfig.rW(2.5),
-                                    ),
-                                    onTap: () {
-                                      Navigator.pushNamed(
-                                          this.context, "/create_assignment");
-                                    },
-                                  )),
-
-                              // Padding(
-                              //     padding: EdgeInsets.only(
-                              //         top: _appConfig.rHP(2.8),
-                              //         left: _appConfig.rWP(75)),
-                              //     child: SvgPicture.asset(
-                              //       "assets/images/Delete Icon.svg",
-                              //       height: _appConfig.rH(2.5),
-                              //       width: _appConfig.rW(2.5),
-                              //     )),
 
                               Padding(
                                 padding: EdgeInsets.only(
-                                    top: _appConfig.rHP(7),
-                                    bottom: _appConfig.rWP(5)),
+                                    top: 2.8.h,
+                                    left: 37.h),
+                                child: GestureDetector(
+                                  child: SvgPicture.asset(
+                                    "assets/images/Edit_Icon.svg",
+                                    height: 2.5.h,
+                                    width: 3.h,
+                                  ),
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        this.context, "/create_assignment");
+                                  },
+                                ),
+                              ),
+
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    top: 2.9.h,
+                                    left: 42.5.h),
+                                child: GestureDetector(
+                                  child: SvgPicture.asset(
+                                    "assets/images/Preview_icon _Assignment.svg",
+                                    height: 2.5.h,
+                                    width: 3.h,
+                                  ),
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        this.context, "/assignment_teacher");
+                                  },
+                                ),
+                              ),
+
+
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    top: 7.h,
+                                    bottom: 2.h),
                                 child: Divider(
                                   thickness: 0.5,
                                   endIndent: 17,
@@ -123,71 +286,43 @@ class _PendingCardState extends State<PendingCard> {
 
                               Padding(
                                 padding: EdgeInsets.only(
-                                    top: _appConfig.rHP(9),
-                                    left: _appConfig.rWP(5),
-                                    bottom: _appConfig.rWP(5)),
+                                    top: 9.h,
+                                    left: 3.h,
+                                    bottom: 3.h),
                                 child: Text(
                                     "${projectSnap.data[index].s40AssignmentDetails}",
                                     style: TextStyle(
                                         color: Colors.black54,
                                         fontWeight: FontWeight.w900,
-                                        fontSize: 10.5)),
+                                        fontSize: 12.sp,fontFamily: 'BarlowSemiCondensed-Medium')),
                               ),
-                              // Padding(
-                              //   padding: EdgeInsets.only(
-                              //       top: _appConfig.rHP(13.5),
-                              //       left: _appConfig.rWP(5.5),
-                              //       bottom: _appConfig.rWP(5)),
-                              //   child: Row(
-                              //     children: [
-                              //       Text("Attached Assignment Documents",
-                              //           style: TextStyle(
-                              //               color: Colors.black54,
-                              //               fontWeight: FontWeight.w900,
-                              //               fontSize: 10)),
-                              //     ],
-                              //   ),
-                              // ),
-                              // Padding(
-                              //   padding:  EdgeInsets.only(top: _appConfig.rHP(15.7),left: _appConfig.rHP(2.7)),
-                              //   //child: SvgPicture.asset("assets/documt.svg",height:_appConfig.rH(1.7),width: _appConfig.rW(2),),
-                              //   child:GestureDetector(child: Icon(Icons.delete),onTap: (){},),
-                              // ),
+
                               Padding(
                                 padding: EdgeInsets.only(
-                                    top: _appConfig.rHP(14),
-                                    left: _appConfig.rHP(2.5)),
-                                child: Text("Document Name.Pdf ",
+                                    top: 19.h,
+                                    left: 3.h),
+                                child: Text(
+                                    "Document Name.Pdf ",
+                                    //"${MediaQuery.of(context).devicePixelRatio}",
                                     style: TextStyle(
-                                        color: Colors.black, fontSize: 7.5)),
+                                        color: Colors.black, fontSize: 12.sp,fontFamily: 'BarlowSemiCondensed-Medium')),
                               ),
-
-                              // Padding(
-                              //   padding: EdgeInsets.only(
-                              //       top: _appConfig.rHP(15.7),
-                              //       left: _appConfig.rHP(18.3)),
-                              //   child: SvgPicture.asset(
-                              //     "assets/images/Delete Icon.svg",
-                              //     height: _appConfig.rH(1.5),
-                              //     width: _appConfig.rW(1.5),
-                              //   ),
-                              // ),
 
                               Padding(
                                 padding: EdgeInsets.only(
-                                    left: _appConfig.rWP(59),
-                                    top: _appConfig.rHP(14)),
+                                    left: 28.h,
+                                    top: 19.h),
                                 child: Row(
                                   children: [
                                     Text("Due ",
                                         style: TextStyle(
                                             fontWeight: FontWeight.w900,
-                                            fontSize: 9,
+                                            fontSize: 10.sp,
                                             color: Colors.grey)),
                                     Text("20 July 2020",
                                         style: TextStyle(
                                             fontWeight: FontWeight.w900,
-                                            fontSize: 9)),
+                                            fontSize: 12.sp)),
                                   ],
                                 ),
                               ),
@@ -196,12 +331,13 @@ class _PendingCardState extends State<PendingCard> {
                         ),
                       ),
                       SizedBox(
-                        height: 6,
+                        height: 2.h,
                       ),
                     ],
                   ),
                 );
-              });
+              },
+          );
         },
       ),
     );

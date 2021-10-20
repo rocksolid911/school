@@ -65,12 +65,12 @@ class _DraftViewState extends State<DraftView> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  left: _appConfig.rWP(10),
+                  left: _appConfig.rWP(13),
                   top: _appConfig.rHP(1),
                 ),
                 child: Text(
                   "Math",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,fontFamily: 'BarlowSemiCondensed-Medium'),
                 ),
               ),
               Padding(
@@ -87,12 +87,12 @@ class _DraftViewState extends State<DraftView> {
                 ),
                 child: Text(
                   "complete the mensuration exercise from 5.1.1 to 5.1.2",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,fontFamily: 'BarlowSemiCondensed-Medium'),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    left: _appConfig.rWP(3), top: _appConfig.rHP(2)),
+                    left: _appConfig.rWP(4), top: _appConfig.rHP(2)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -130,7 +130,7 @@ class _DraftViewState extends State<DraftView> {
                       children: [
                         Opacity(opacity: 0.5, child: Text("Class and Section")),
                         Padding(
-                          padding:  EdgeInsets.only(right: _appConfig.rWP(30)),
+                          padding:  EdgeInsets.only(right: _appConfig.rWP(22)),
                           child: Text("10A",style: TextStyle(fontWeight: FontWeight.bold),),
                         )
                       ],
@@ -188,17 +188,17 @@ class _DraftViewState extends State<DraftView> {
                           child: Text(
                             "Submmited Assignment",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontWeight: FontWeight.bold, fontSize: 20,fontFamily: 'BarlowSemiCondensed-Medium'),
                           ),
                         ),
-                        Divider(),
+                        Divider(thickness: 3,),
                       ],
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding:  EdgeInsets.only(left:_appConfig.rHP(10),right: _appConfig.rHP(4),top: _appConfig.rHP(4),),
+                padding:  EdgeInsets.only(left:_appConfig.rHP(13),right: _appConfig.rHP(4),top: _appConfig.rHP(4),),
                 child: SaveCancel(),
               ),
               SizedBox(height: _appConfig.rH(2),)

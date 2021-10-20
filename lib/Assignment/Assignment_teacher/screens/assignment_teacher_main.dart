@@ -9,6 +9,7 @@ import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/pendin
 import 'package:phygitalz_project_1/Common/widgets/bottomnav.dart';
 import 'package:phygitalz_project_1/Common/widgets/drawer.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
+import 'package:sizer/sizer.dart';
 
 import '../widgets/student_submitted_card.dart';
 
@@ -54,7 +55,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
         child: Container(
           // height: 60,
           // width: 60,
-          height: _appConfig.rH(18), width: _appConfig.rW(18),
+          height: 14.h, width: 14.w,
           decoration: BoxDecoration(
             // image: DecorationImage(
             //     image: AssetImage(
@@ -80,7 +81,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
           child: Icon(
             Icons.add,
             color: Colors.white,
-            size: 32,
+            size: 5.h,
           ),
           // child: SvgPicture.asset(
           //  "assets/images/Create_Icon_Assignment.svg",
@@ -88,8 +89,9 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
           // )
         ),
       ),
-      appBar:PreferredSize(
-        preferredSize: Size.fromHeight(_appConfig.rH(31)),
+      appBar: PreferredSize(
+        // preferredSize: Size.fromHeight(_appConfig.rH(36.5)),
+        preferredSize: Size.fromHeight(39.h),
         child: Container(
           //color: Colors.green,
           child: new SafeArea(
@@ -98,11 +100,24 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
               child: Column(
                 children: <Widget>[
                   Container(
-                    height: _appConfig.rH(10),
-                    width: _appConfig.rW(100),
-                    //color: Colors.pinkAccent,
+                    height: 10.h,
+                    width: 100.h,
+                    // color: Colors.pinkAccent,
                     decoration: BoxDecoration(
-                        color: Colors.pinkAccent,
+                        // image: DecorationImage(
+                        //   image: AssetImage(
+                        //       'assets/images/AppBarWidth450.jpg'),
+                        //   fit: BoxFit.cover,
+                        // ),
+                        gradient: LinearGradient(
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                            colors: [
+                              Color(0xFFDD3B64),
+                              // Colors.blue,
+                              Color(0xFFB017A5),
+                              Color(0xFF7E17B0),
+                            ]),
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20))),
@@ -111,11 +126,12 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Padding(
-                          padding:  EdgeInsets.only(left: _appConfig.rWP(1),bottom: _appConfig.rHP(4)),
+                          padding: EdgeInsets.only(left: 2.h, bottom: 4.h),
                           child: GestureDetector(
                             child: Icon(
                               Icons.sort,
                               color: Colors.white,
+                              size: 6.h,
                             ),
                             onTap: () {
                               _drawerkey.currentState.openDrawer();
@@ -123,23 +139,24 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                           ),
                         ),
                         Padding(
-                          padding:  EdgeInsets.only(bottom: _appConfig.rHP(4)),
+                          padding: EdgeInsets.only(bottom: 5.h, right: 15.h),
                           child: Text(
                             "Assignment",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
                         Padding(
-                          padding:  EdgeInsets.only(bottom: _appConfig.rHP(4)),
+                          padding: EdgeInsets.only(bottom: 5.h, right: 2.h),
                           child: IconButton(
                             onPressed: () {},
                             icon: Icon(
                               Icons.search,
                               color: Colors.white,
+                              size: 5.h,
                             ),
                           ),
                         ),
@@ -148,25 +165,26 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                   ),
                   //TODO space for filter buttons
                   SizedBox(
-                    height: _appConfig.rH(8),
+                    height: 9.h,
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding:
+                              EdgeInsets.only(left: 8.0, right: 8.0, top: 15.0),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               CustomAnimatedButton(
                                 text: "Homework",
                                 selected: homework,
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
-                                     homework = true;
-                                     labrecord = false;
-                                     portfolio = false;
+                                    homework = true;
+                                    labrecord = false;
+                                    portfolio = false;
                                   });
                                 },
-                                height: _appConfig.rH(5),
+                                height: 5.h,
                                 width: _appConfig.rW(25),
                                 startcolor: 0xFFD64575,
                                 midcolor: 0xFFD64570,
@@ -174,12 +192,12 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                 radius: 25,
                                 activecolor: Colors.white,
                                 inactivecolor: Color(0xFFD64570),
-                                fntsize: 12,
+                                fntsize: 10.sp,
                               ),
                               CustomAnimatedButton(
                                 text: "Portfolio",
                                 selected: portfolio,
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
                                     homework = false;
                                     labrecord = false;
@@ -194,12 +212,12 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                 radius: 25,
                                 activecolor: Colors.white,
                                 inactivecolor: Color(0xFFD64570),
-                                fntsize: 12,
+                                fntsize: 10.sp,
                               ),
                               CustomAnimatedButton(
                                 text: "Lab record",
                                 selected: labrecord,
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
                                     homework = false;
                                     labrecord = true;
@@ -207,34 +225,37 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                   });
                                 },
                                 height: _appConfig.rH(5),
-                                width: _appConfig.rW(32),
+                                width: _appConfig.rW(25),
                                 startcolor: 0xFFD64575,
                                 midcolor: 0xFFD64570,
                                 endcolor: 0xFF8522A3,
                                 radius: 25,
                                 activecolor: Colors.white,
                                 inactivecolor: Color(0xFFD64570),
-                                fntsize: 12,
+                                fntsize: 10.sp,
                               ),
                             ],
                           ),
                         ),
-
-                      ],),
+                      ],
+                    ),
                   ),
                   Divider(
                     thickness: 3,
                   ),
-                  // SizedBox(
-                  //   height: _appConfig.rH(2),
-                  // ),
+                  SizedBox(
+                    //height: _appConfig.rH(0.1.h),
+                    height: 1.h,
+                  ),
                   PreferredSize(
-                    preferredSize: new Size(200.0, 200.0),
+                    preferredSize: new Size(12.h, 12.h),
                     child: new Container(
                       width: double.infinity,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 18.0,right: 18),
+                        padding: EdgeInsets.only(left: 2.h, right: 0),
                         child: new TabBar(
+                          indicatorSize: TabBarIndicatorSize.label,
+                          indicatorWeight: 4,
                           isScrollable: true,
                           indicatorColor: Colors.purple,
                           tabs: [
@@ -258,6 +279,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                   )
                 ],
               ),
+              borderOnForeground: false,
             ),
           ),
         ),
@@ -274,7 +296,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
           //     SubmitCard(),
           //   ],
           // ),
-         // DraftAssignment(),
+          // DraftAssignment(),
           choosetype(),
           //Pendings(),
           choosepending(),
@@ -283,22 +305,42 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
       ),
     );
   }
+
   Widget choosetype() {
-    if(homework){
-      return SubmitCard(type: "Home work",stat: "Draft",);
-    }else if(labrecord){
-      return SubmitCard(type: "Lab Record",stat: "Draft",);
-    }else{
-      return SubmitCard(type: "Port Folio",stat: "Draft",);
+    if (homework) {
+      return SubmitCard(
+        type: "Home work",
+        stat: "Draft",
+      );
+    } else if (labrecord) {
+      return SubmitCard(
+        type: "Lab Record",
+        stat: "Draft",
+      );
+    } else {
+      return SubmitCard(
+        type: "Port Folio",
+        stat: "Draft",
+      );
     }
   }
+
   Widget choosepending() {
-    if(homework){
-      return PendingCard(type: "Home work",stat: "Pending",);
-    }else if(labrecord){
-      return PendingCard(type: "Lab Record",stat: "Pending",);
-    }else{
-      return PendingCard(type: "Port Folio",stat: "Pending",);
+    if (homework) {
+      return PendingCard(
+        type: "Home work",
+        stat: "Pending",
+      );
+    } else if (labrecord) {
+      return PendingCard(
+        type: "Lab Record",
+        stat: "Pending",
+      );
+    } else {
+      return PendingCard(
+        type: "Port Folio",
+        stat: "Pending",
+      );
     }
   }
 }

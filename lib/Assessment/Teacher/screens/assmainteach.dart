@@ -388,7 +388,7 @@ class _AssTeacherState extends State<AssTeacher>
       bottomNavigationBar: mYBottomNav(),
       key: _drawerkey,
       appBar:PreferredSize(
-        preferredSize: Size.fromHeight(_appConfig.rH(45)),
+        preferredSize: Size.fromHeight(_appConfig.rH(37)),
         child: Container(
           //color: Colors.green,
           child: new SafeArea(
@@ -447,7 +447,7 @@ class _AssTeacherState extends State<AssTeacher>
                   ),
                   //TODO space for filter buttons
                   SizedBox(
-                    height: _appConfig.rH(17),
+                    height: _appConfig.rH(13),
                     child: Column(
                       children: [
                         Padding(
@@ -521,7 +521,7 @@ class _AssTeacherState extends State<AssTeacher>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding:  EdgeInsets.only(left: 8.0,right: 8.0,top: 8.0),
                           child: Row(
 
                             children: [        SizedBox(width: _appConfig.rW(3),),
@@ -590,7 +590,7 @@ class _AssTeacherState extends State<AssTeacher>
                         ),
                       ],),
                   ),
-                  Divider(),
+                  Divider(thickness: 4,),
                   SizedBox(
                     height: _appConfig.rH(1),
                   ),
@@ -602,13 +602,13 @@ class _AssTeacherState extends State<AssTeacher>
                         isScrollable: true,
                         indicatorColor: Colors.purple,
                         tabs: [
-                          RoundedTabAll(sel: chsTab(),stat: "Draft",),
-                          RoundedTabAll(sel: chsTab(),stat: "Submitted",),
-                          RoundedTabAll(sel: chsTab(),stat: "Approved",),
-                          RoundedTabAll(sel: chsTab(),stat: "Rejected",),
-                          RoundedTabAll(sel: chsTab(),stat: "Scheduled",),
-                          RoundedTabAll(sel: chsTab(),stat: "Conducted",),
-                          RoundedTabAll(sel: chsTab(),stat: "Evaluated",)
+                          RoundedTabAll(sel: chsTab(),stat: "Draft",clr: Colors.green,),
+                          RoundedTabAll(sel: chsTab(),stat: "Submitted",clr: Colors.blue,),
+                          RoundedTabAll(sel: chsTab(),stat: "Approved",clr: Colors.amber,),
+                          RoundedTabAll(sel: chsTab(),stat: "Rejected",clr: Colors.deepOrangeAccent,),
+                          RoundedTabAll(sel: chsTab(),stat: "Scheduled",clr: Colors.lightGreenAccent,),
+                          RoundedTabAll(sel: chsTab(),stat: "Conducted",clr: Colors.greenAccent,),
+                          RoundedTabAll(sel: chsTab(),stat: "Evaluated",clr: Colors.indigo,)
                         ],
                         controller: controller,
                       ),

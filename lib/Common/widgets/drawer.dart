@@ -154,6 +154,7 @@ class myDrawer extends StatelessWidget {
         title: Text('Issue & Suggestion'),
         onTap: () {
           Navigator.pop(context);
+          Navigator.pushNamed(context, "/studentAssignment");
         },
       ),
       ListTile(
@@ -243,7 +244,7 @@ class myDrawer extends StatelessWidget {
               ),
             ),
             Container(
-              height: _appConfig.rH(79),
+              height: _appConfig.rH(75),
               width: double.infinity,
               //color: Colors.green,
               child: Scrollbar(

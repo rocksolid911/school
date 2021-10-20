@@ -3,6 +3,7 @@ import 'package:phygitalz_project_1/Assessment/Student/widgets/partB/assessment_
 import 'package:phygitalz_project_1/Assessment/Teacher/screens/assmainteach.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/screens/evaluateexam.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/widgets/studentreview.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_student/screens/student_main.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/screens/assignment_draft_view.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/screens/assignment_teacher_draft.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/screens/create_assignment.dart';
@@ -81,6 +82,7 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => MenuPopupSelfTask (),
         );
+        //Assignment
       case '/assignment_teacher_main':
         return MaterialPageRoute(
           builder: (_) => AssignmentTeacherMain(),
@@ -104,6 +106,10 @@ class RouteGenerator {
       case '/try':
         return MaterialPageRoute(
           builder: (_) => Try(),
+        );
+      case '/studentAssignment':
+        return MaterialPageRoute(
+          builder: (_) => StudentMain(),
         );
    ///Assessment teacher routes////////////
       case '/assmain':

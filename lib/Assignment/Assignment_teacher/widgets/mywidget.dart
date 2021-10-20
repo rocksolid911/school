@@ -3,6 +3,7 @@ import 'package:phygitalz_project_1/Assignment/Assignment_teacher/models/datajso
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/dataprovider.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/filterprovider.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class MyWidget extends StatefulWidget {
   final String status;
@@ -21,6 +22,7 @@ class _MyWidgetState extends State<MyWidget> with SingleTickerProviderStateMixin
   Widget build(context) {
     DataProvider provider = Provider.of<DataProvider>(context);
   //  FilterProvider filterProvider = Provider.of<FilterProvider>(context);
+    double  data = MediaQuery.of(context).devicePixelRatio;
     //TODO make it a switch statement for all tabs use
 
         return FutureBuilder<List<Assignment>>(
@@ -29,24 +31,27 @@ class _MyWidgetState extends State<MyWidget> with SingleTickerProviderStateMixin
               if (snapshot.hasData) {
                 list =  snapshot.data;
                 return Container(
-                  height: 70.0,
-                  width: 80,
+                 // height: 12.5.h,
+                  height: data>=2.75?12.5.h:14.h,
+                  width: 13.h,
                   child: new Tab(
                     //text: 'hello'
                     child: Column(
                       children: [
                         CircleAvatar(
-                          radius: 20,
-                          child: Text("${list.length}"),
+                          //radius: data>=2.75?40:30,
+                          radius:30,
+                          child: Text("${list.length}",style: TextStyle(fontSize:  data>=2.75?22.sp:18.sp),),
                           backgroundColor: widget.clr,
                         ),
                         SizedBox(
                           // height: _appConfig.rH(1),
-                          height: 8,
+                          height: data>=2.75?1.2.h:2.h,
                         ),
                         Text(
                           "${widget.status}",
-                          style: TextStyle(color: Colors.black, fontSize: 14),
+                          style: TextStyle(color: Colors.black, fontSize: 13.sp),
+                          maxLines: 1,
                         ),
                       ],
                     ),

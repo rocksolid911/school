@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.101" height="20.378" viewBox="0 0 12.101 20.378">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.324" y1="1" x2="1.384" y2="0.128" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fa5435"/>
+      <stop offset="1" stop-color="#8517ad"/>
+    </linearGradient>
+  </defs>
+  <path id="Icon_material-attach-file" data-name="Icon material-attach-file" d="M20.951,6.131V16.783c0,2.047-1.969,3.705-4.4,3.705s-4.4-1.658-4.4-3.705V5.205A2.562,2.562,0,0,1,14.9,2.889a2.562,2.562,0,0,1,2.75,2.316v9.726a1.116,1.116,0,0,1-2.2,0v-8.8H13.8v8.8a2.562,2.562,0,0,0,2.75,2.316,2.562,2.562,0,0,0,2.75-2.316V5.205c0-2.047-1.969-3.705-4.4-3.705s-4.4,1.658-4.4,3.705V16.783c0,2.816,2.706,5.094,6.05,5.094S22.6,19.6,22.6,16.783V6.131Z" transform="translate(-10.5 -1.5)" fill="url(#linear-gradient)"/>
+</svg>

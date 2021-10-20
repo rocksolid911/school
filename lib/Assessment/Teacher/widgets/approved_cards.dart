@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:gradientbutton/appconfig.dart';
+import 'package:gradientbutton/appconfig.dart';import 'package:sizer/sizer.dart';
 
 class Approvedcard extends StatefulWidget {
   @override
@@ -15,7 +15,7 @@ class _ApprovedcardState extends State<Approvedcard> {
     _appConfig = AppConfig(context);
     return Stack(children: [
       Container(
-        height: _appConfig.rH(59.3),
+        height:59.3.h,
         child: ListView.builder(
             shrinkWrap: true,
             itemCount: 3,
@@ -31,34 +31,36 @@ class _ApprovedcardState extends State<Approvedcard> {
                               topRight: Radius.circular(10),
                               bottomRight: Radius.circular(10))),
                       child: Container(
-                        height: _appConfig.rH(20.5),
-                        width: _appConfig.rW(85.5),
+                        height:20.5.h,
+                        width: 86.8.w,
                         child: Stack(
                           children: [
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    top: _appConfig.rHP(1.8),
-                                    left: _appConfig.rWP(4)),
-                                child: SvgPicture.asset(
-                                  "assets/images/Subject_Icon_W.Name_Maths.svg",
-                                  height: _appConfig.rH(5),
-                                  width: _appConfig.rW(5),
-                                )), // color: HexColor("#f55f5f"),
+                        Padding(
+                        padding: EdgeInsets.only(
+                        top:1.8.h,
+                            left:4.w),
+                          child: SvgPicture.asset(
+                            "assets/images/Subject_Icon_W.Name_Maths.svg",
+                            height: 5.h,
+                            width: 5.w,
+                          )),
+                        //color: HexColor("#f55f5f"),
 
                             Padding(
                               padding: EdgeInsets.only(
-                                  top: _appConfig.rHP(3.5),
-                                  left: _appConfig.rWP(16)),
-                              child: Text("Mathematics",
-                                  style: TextStyle( color: Color(0xFF666161),
-                                      fontWeight: FontWeight.w900,
-                                      fontSize: 11)),
+                                  top: 3.5.h,
+                                  left: 16.w),
+                              child: Text("maths",
+                                  style: TextStyle( color: Color(0xFF2C2C2C),letterSpacing: 0.02,
+                                      fontWeight: FontWeight.w600,fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
+                                      fontSize: 13.3.sp)),
                             ),
 
+
                             Padding(
                               padding: EdgeInsets.only(
-                                  top: _appConfig.rHP(7),
-                                  bottom: _appConfig.rWP(5)),
+                                top:6.8.h,
+                              ),
                               child: Divider(
                                 thickness: 0.5,
                                 endIndent: 17,
@@ -67,83 +69,85 @@ class _ApprovedcardState extends State<Approvedcard> {
                               ),
                             ),
 
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(10),
-                                      left: _appConfig.rWP(5),
-                                      bottom: _appConfig.rWP(5)),
-                                  child: Text("Timing",
-                                      style:  TextStyle(
-              color: Color(0xFF858383),
-              fontWeight:FontWeight.w700,
-              fontSize: 9)),
-                                ),
+                            Padding(
+                              padding: EdgeInsets.only(
 
-                                //  color: Color(0xFF2E2E2E),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(10),
-                                      left: _appConfig.rWP(12),
-                                      bottom: _appConfig.rWP(5)),
-                                  child: Text("2.30pm - 5.00pm",
-                                      style: TextStyle(
-                                          color: Color(0xFF2E2E2E),
-                                          fontWeight: FontWeight.w900,
-                                          fontSize: 9)),
-                                ),
-                              ],
+                                  top: 9.8.h,left: 5.w
+                              ),
+                              child: Row(
+                                children: [
+                                  Text("Timing",
+                                      style: TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                          color: Color(0xFF757575),
+                                          fontWeight:FontWeight.w500,
+                                          fontSize: 10.sp)),
+
+                                  //  color: Color(0xFF2E2E2E),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+
+                                      left:12.w,
+                                    ),
+                                    child: Text(
+                                        "2.30pm - 5.00pm",
+                                        style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
+                                            color: Color(0xFF2E2E2E),
+                                            fontWeight:FontWeight.w600,
+                                            fontSize: 10.sp)),
+                                  ),
+                                ],
+                              ),
                             ),
 
                             Padding(
                               padding: EdgeInsets.only(
-                                  top: _appConfig.rHP(13),
-                                  left: _appConfig.rWP(5),
-                                  bottom: _appConfig.rWP(0)),
+                                top: 12.8.h,
+                                left: 5.w,
+                              ),
                               child: Row(
                                 children: [
                                   Text("Exam Type",
-                                      style:  TextStyle(
-                                  color: Color(0xFF858383),
-                                fontWeight:FontWeight.w700,
-                                fontSize: 9)),
+                                      style: TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                          color: Color(0xFF757575),
+                                          fontWeight:FontWeight.w500,
+                                          fontSize: 10.sp)),
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        top: _appConfig.rHP(0),
-                                        left: _appConfig.rWP(6.7),
-                                        bottom: _appConfig.rWP(0)),
-                                    child: Text("Summative",
-                                        style: TextStyle(
+
+                                        left:5.4.w
+                                    ),
+                                    child: Text(
+                                        "Summative",
+                                        style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
                                             color: Color(0xFF2E2E2E),
-                                            fontWeight: FontWeight.w900,
-                                            fontSize: 9)),
+                                            fontWeight:FontWeight.w600,
+                                            fontSize: 10.sp)),
                                   ),
                                 ],
                               ),
                             ),
                             Padding(
                               padding: EdgeInsets.only(
-                                  top: _appConfig.rHP(18),
-                                  left: _appConfig.rWP(5),
-                                  bottom: _appConfig.rWP(0)),
+                                top: 17.h,
+                                left:5.2.w,
+                              ),
                               child: Row(
                                 children: [
                                   Text("Class",
-                                      style:  TextStyle(
-                                          color: Color(0xFF858383),
-                                          fontWeight:FontWeight.w700,
-                                          fontSize: 9)),
+                                      style:  TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                          color: Color(0xFF757575),
+                                          fontWeight:FontWeight.w500,
+                                          fontSize: 10.sp)),
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        top: _appConfig.rHP(0),
-                                        left: _appConfig.rWP(1),
-                                        bottom: _appConfig.rWP(0)),
+
+                                      left: 1.w,
+                                    ),
                                     child: Text("10",
-                                        style: TextStyle(
+                                        style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
                                             color: Color(0xFF2E2E2E),
-                                            fontWeight: FontWeight.w900,
-                                            fontSize: 9)),
+                                            fontWeight:FontWeight.w600,
+                                            fontSize: 11.sp)),
                                   ),
                                 ],
                               ),
@@ -151,20 +155,21 @@ class _ApprovedcardState extends State<Approvedcard> {
 
                             Padding(
                               padding: EdgeInsets.only(
-                                  top: _appConfig.rHP(18),
-                                  left: _appConfig.rWP(57)),
+                                  top:17.h,
+                                  left:48.5.w),
                               child: Row(
                                 children: [
                                   Text("Exam",
-                                      style: TextStyle(
-                                          color: Color(0xFF858383),
-                                          fontWeight:FontWeight.w700,
-                                          fontSize: 9)),
-                                  SizedBox(width: _appConfig.rW(2)),
-                                  Text("21 Oct 2020",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w900,
-                                          fontSize: 9)),
+                                      style:  TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                          color: Color(0xFF757575),
+                                          fontWeight:FontWeight.w500,
+                                          fontSize: 10.sp)),
+                                  SizedBox(width: 2.w),
+                                  Text("21 Oct 2021",
+                                      style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
+                                          color: Color(0xFF2E2E2E),
+                                          fontWeight:FontWeight.w600,
+                                          fontSize: 11.sp)),
                                 ],
                               ),
                             ),
@@ -173,8 +178,11 @@ class _ApprovedcardState extends State<Approvedcard> {
                       ),
                     ),
                     SizedBox(
-                      height: 6,
+                      height:0.8.h,
                     ),
+
+
+
                   ],
                 ),
               );

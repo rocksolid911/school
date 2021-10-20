@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gradientbutton/appconfig.dart';
+import 'package:phygitalz_project_1/Assessment/Teacher/screens/evaluateexam.dart';
 
+import 'package:sizer/sizer.dart';
 
 class ConductedCard extends StatefulWidget {
   @override
@@ -17,7 +19,7 @@ class _ConductedCardState extends State<ConductedCard> {
       children: [
         Expanded(
           child: Container(
-            height: _appConfig.rH(59.3),
+            height:59.3.h,
             child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: 3,
@@ -35,72 +37,84 @@ class _ConductedCardState extends State<ConductedCard> {
                             ),
                           ),
                           child: Container(
-                            height: _appConfig.rH(20.5),
-                            width: _appConfig.rW(85.5),
+                            height:20.5.h,
+                            width: 86.8.w,
                             child: Stack(
                               children: [
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(1.8),
-                                      left: _appConfig.rWP(4)),
-                                  child: SvgPicture.asset(
-                                    "assets/images/Subject_Icon_W.Name_Tamil.svg",
-                                    height: _appConfig.rH(5),
-                                    width: _appConfig.rW(5),
-                                  ),
-                                ), // color: HexColor("#f55f5f"),
+                            Padding(
+                            padding: EdgeInsets.only(
+                            top:1.8.h,
+                                left:4.w),
+                              child: SvgPicture.asset(
+                                "assets/images/Subject_Icon_W.Name_Maths.svg",
+                                height: 5.h,
+                                width: 5.w,
+                              )),
+
+
+
+
+
+
+                              // color: HexColor("#f55f5f"),
 
                                 Padding(
                                   padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(3.5),
-                                      left: _appConfig.rWP(15.5)),
-                                  child: Text("Tamil",
-                                      style: TextStyle( color: Color(0xFF666161),
-                                          fontWeight: FontWeight.w900,
-                                          fontSize: 11)),
+                                      top: 3.5.h,
+                                      left: 16.w),
+                                  child: Text("maths",
+                                      style: TextStyle( color: Color(0xFF2C2C2C),letterSpacing: 0.02,
+                                          fontWeight: FontWeight.w600,fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
+                                          fontSize: 13.3.sp)),
                                 ),
+
                                 Positioned(
-                                  child: ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.pushNamed(this.context, "/evexam");
-                                    },
-                                    style: ButtonStyle(
-                                        shape: MaterialStateProperty.all<
-                                                RoundedRectangleBorder>(
-                                            RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(22.0),
-                                      //side: BorderSide(color: Colors.red)
-                                    ))),
-                                    child: Text("Evaluate"),
+                                  child: Container(height: 3.6.h,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.push(this.context, MaterialPageRoute(builder: (context)=>EvExam()));
+                                      },
+                                      style: ButtonStyle(backgroundColor:MaterialStateProperty.all(Color(0xFF4B71DB)),
+                                          shape: MaterialStateProperty.all<
+                                                  RoundedRectangleBorder>(
+                                              RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(22.0),
+                                        //side: BorderSide(color: Colors.red)
+                                      ))),
+                                      child: Text("Evaluate",style: TextStyle( color: Colors.white,
+                                          fontWeight: FontWeight.w600,fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
+                                          fontSize: 10.sp),),
+                                    ),
                                   ),
-                                  right: _appConfig.rW(5),
-                                  top: _appConfig.rH(0.5),
+                                  right: 4.3.w,
+                                  top: 2.3.h,
                                 ),
                                 Positioned(
                                   child: RichText(
-                                    text: TextSpan(text:   "33",
-                                        style: TextStyle(
-                                            color: Color(0xFF2E2E2E),
+                                    text: TextSpan(text:   "33 ",
+                                        style: TextStyle(letterSpacing: 0.009,
+                                            color: Color(0xFF2E2E2E),fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
                                             fontWeight: FontWeight.w900,
-                                            fontSize: 15),
-                                        children: [TextSpan(text: "/80",
+                                            fontSize: 16.sp),
+                                        children: [TextSpan(text: "/ 80",
                                           style: TextStyle(
                                               color: Color(0xFFB8B6B6),
-                                              fontWeight: FontWeight.w900,
-                                              fontSize: 10.5),)]
+                                              fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 13.sp),)]
 
                                     ),
 
 
 
                                   ),
-                                  right:  _appConfig.rW(3.5),
-                                  top: _appConfig.rH(12.5),
+                                  right: 4.w,
+                                  top: 12.5.h,
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(7),
-                                      bottom: _appConfig.rWP(5)),
+                                    top:6.8.h,
+                                  ),
                                   child: Divider(
                                     thickness: 0.5,
                                     endIndent: 17,
@@ -110,138 +124,128 @@ class _ConductedCardState extends State<ConductedCard> {
                                 ),
 
 
-                                Row(
-                                  children: [
-                                    Padding(
-                                        padding: EdgeInsets.only(
-                                            top: _appConfig.rHP(10),
-                                            left: _appConfig.rWP(5),
-                                            bottom: _appConfig.rWP(5)),
-                                        child: Text(
-                                            "Answering Type",
-                                            style:  TextStyle(
-                                                color: Color(0xFF858383),
-                                                fontWeight:FontWeight.w700,
-                                                fontSize: 9))),
+                                Padding(
+                                  padding: EdgeInsets.only(
 
-                                    //  color: Color(0xFF2E2E2E),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          top: _appConfig.rHP(10),
-                                          left: _appConfig.rWP(2),
-                                          bottom: _appConfig.rWP(5)),
-                                      child: Text(
-                                          "Attach Pdf",
-                                          style: TextStyle(
-                                              color: Color(0xFF2E2E2E),
-                                              fontWeight: FontWeight.w900,
-                                              fontSize: 9)),
-                                    ),
-                                  ],
+                                      top: 9.8.h,left: 5.w
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Text("Answering type",
+                                          style: TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                              color: Color(0xFF757575),
+                                              fontWeight:FontWeight.w500,
+                                              fontSize: 10.sp)),
+
+                                      //  color: Color(0xFF2E2E2E),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+
+                                          left: 2.w,
+                                        ),
+                                        child: Text(
+                                            "Attach Pdf",
+                                            style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
+                                                color: Color(0xFF2E2E2E),
+                                                fontWeight:FontWeight.w600,
+                                                fontSize: 10.sp)),
+                                      ),
+                                    ],
+                                  ),
                                 ),
 
                                 Padding(
                                   padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(13),
-                                      left: _appConfig.rWP(5),
-                                      bottom: _appConfig.rWP(0)),
+                                    top: 12.8.h,
+                                    left: 5.w,
+                                  ),
                                   child: Row(
                                     children: [
                                       Text("Exam Type",
-                                          style:  TextStyle(
-                                              color: Color(0xFF858383),
-                                              fontWeight:FontWeight.w700,
-                                              fontSize: 9)),
+                                          style: TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                              color: Color(0xFF757575),
+                                              fontWeight:FontWeight.w500,
+                                              fontSize: 10.sp)),
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            top: _appConfig.rHP(0),
-                                            left: _appConfig.rWP(3),
-                                            bottom: _appConfig.rWP(0)),
-                                        child: Text("Summative",
-                                            style: TextStyle(  color: Color(0xFF2E2E2E),
-                                                fontWeight: FontWeight.w900,
-                                                fontSize: 9)),
+
+                                            left:2.w
+                                        ),
+                                        child: Text(
+                                            "Summative",
+                                            style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
+                                                color: Color(0xFF2E2E2E),
+                                                fontWeight:FontWeight.w600,
+                                                fontSize: 10.sp)),
                                       ),
-
-
                                     ],
                                   ),
                                 ),
 
 
+
                                 Padding(
                                   padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(18),
-                                      left: _appConfig.rWP(5),
-                                      bottom: _appConfig.rWP(0)),
+                                    top: 17.h,
+                                    left:5.2.w,
+                                  ),
                                   child: Row(
                                     children: [
                                       Text("Class",
-                                          style:  TextStyle(
-                                              color: Color(0xFF858383),
-                                              fontWeight:FontWeight.w700,
-                                              fontSize: 9)),
+                                          style:  TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                              color: Color(0xFF757575),
+                                              fontWeight:FontWeight.w500,
+                                              fontSize: 10.sp)),
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            top: _appConfig.rHP(0),
-                                            left: _appConfig.rWP(1),
-                                            bottom: _appConfig.rWP(0)),
+
+                                          left: 1.w,
+                                        ),
                                         child: Text("10",
-                                            style: TextStyle(
+                                            style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
                                                 color: Color(0xFF2E2E2E),
-                                                fontWeight: FontWeight.w900,
-                                                fontSize: 9)),
+                                                fontWeight:FontWeight.w600,
+                                                fontSize: 11.sp)),
                                       ),
-                                    ],
-                                  ),
-                                ),
 
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(18),
-                                      left: _appConfig.rWP(17.5),
-                                      bottom: _appConfig.rWP(0)),
-                                  child: Row(
-                                    children: [
+                                      SizedBox(width: 1.w,),
+
                                       Text("Section",
-                                          style:  TextStyle(
-                                              color: Color(0xFF858383),
-                                              fontWeight:FontWeight.w700,
-                                              fontSize: 9)),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: _appConfig.rHP(0),
-                                            left: _appConfig.rWP(1),
-                                            bottom: _appConfig.rWP(0)),
-                                        child: Text("A",
-                                            style: TextStyle(
-                                                color: Color(0xFF2E2E2E),
-                                                fontWeight: FontWeight.w900,
-                                                fontSize: 9)),
-                                      ),
+                                          style: TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                              color: Color(0xFF757575),
+                                              fontWeight:FontWeight.w500,
+                                              fontSize: 12)),
+                                      SizedBox(width: 1.w,),
+                                      Text("A",
+                                          style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
+                                              color: Color(0xFF2E2E2E),
+                                              fontWeight:FontWeight.w600,
+                                              fontSize: 11.sp))
+
                                     ],
                                   ),
                                 ),
 
 
 
+
                                 Padding(
                                   padding: EdgeInsets.only(
-                                      top: _appConfig.rHP(18),
-                                      left: _appConfig.rWP(55)),
+                                      top:17.h,
+                                      left:48.5.w),
                                   child: Row(
                                     children: [
-                                      Text("Exam ",
-                                          style: TextStyle(
-                                              color: Color(0xFF858383),
-                                              fontWeight:FontWeight.w700,
-                                              fontSize: 9)),
-
-                                      SizedBox(width: _appConfig.rW(2),),
-                                      Text("21 Oct 2020",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w900,
-                                              fontSize: 9.5)),
+                                      Text("Exam",
+                                          style:  TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                              color: Color(0xFF757575),
+                                              fontWeight:FontWeight.w500,
+                                              fontSize: 10.sp)),
+                                      SizedBox(width: 2.w),
+                                      Text("21 Oct 2021",
+                                          style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
+                                              color: Color(0xFF2E2E2E),
+                                              fontWeight:FontWeight.w600,
+                                              fontSize: 11.sp)),
                                     ],
                                   ),
                                 ),
@@ -250,8 +254,12 @@ class _ConductedCardState extends State<ConductedCard> {
                           ),
                         ),
                         SizedBox(
-                          height: 6,
+                          height:0.8.h,
                         ),
+
+
+
+
                       ],
                     ),
                   );

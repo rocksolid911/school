@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gradientbutton/appconfig.dart';
-
+import 'package:sizer/sizer.dart';
 class NotCorrected extends StatefulWidget {
   NotCorrected({Key key}) : super(key: key);
 
@@ -17,82 +18,190 @@ class _NotCorrectedState extends State<NotCorrected> {
     return Column(
       children: [
         SizedBox(
-          height: _appConfig.rH(18),
+          height:18.h,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding:  EdgeInsets.only(top:_appConfig.rHP(1),right: _appConfig.rWP(30)),
-                child: Text("Exam Type : Summetive"),
+                padding: EdgeInsets.only(
+                    top: 4.h, right: 30.w),
+                child: Text(
+                  "Exam Type : Summative",
+                  style: TextStyle(
+                      fontSize: 13.2.sp,
+                      color: Color(0xFF2C2C2C),
+                      letterSpacing: 0.02,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),
+                ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: _appConfig.rWP(8)),
+                padding: EdgeInsets.only(left: 7.8.w),
                 child: Row(
                   children: [
                     Text(
-                      "class : 10",
-                      style: TextStyle(fontSize: 12),
+                      "Class  ",
+                      style:  TextStyle(
+                          fontSize: 10.sp,
+                          color: Color(0xFF757575),
+
+                          fontWeight: FontWeight.w500,
+                          fontFamily: "BarlowSemiCondensed-Medium,Barlow"),
+                    ), Text(
+                      "10   ",
+                       style: TextStyle(
+                            fontSize: 11.sp,
+                            color: Color(0xFF2E2E2E),
+
+                            fontWeight: FontWeight.w600,
+                            fontFamily: "BarlowSemiCondensed-SemiBold,Barlow")
                     ),
                     Text(
-                      "section : B",
-                      style: TextStyle(fontSize: 12),
+                      "Section  ",
+                      style: TextStyle(
+                          fontSize: 10.sp,
+                          color: Color(0xFF757575),
+
+                          fontWeight: FontWeight.w500,
+                          fontFamily: "BarlowSemiCondensed-Medium,Barlow"),
+                    ),   Text(
+                      "B   ",
+                      style:TextStyle(
+                          fontSize: 11.sp,
+                          color: Color(0xFF2E2E2E),
+
+                          fontWeight: FontWeight.w600,
+                          fontFamily: "BarlowSemiCondensed-SemiBold,Barlow")
                     ),
                     Text(
-                      "Subject: Mathmatics",
-                      style: TextStyle(fontSize: 12),
+                      "Subject  ",
+                      style:TextStyle(
+                          fontSize: 10.sp,
+                          color: Color(0xFF757575),
+
+                          fontWeight: FontWeight.w500,
+                          fontFamily: "BarlowSemiCondensed-Medium,Barlow"),
+                    ),
+
+                    Text(
+                      "Mathematics",
+             style:     TextStyle(
+                      fontSize: 11.sp,
+                      color: Color(0xFF2E2E2E),
+
+                      fontWeight: FontWeight.w600,
+                      fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),
                     ),
                   ],
                 ),
               ),
+
+
+
               Padding(
-                padding:  EdgeInsets.only(right: _appConfig.rWP(44)),
-                child: Text(
-                  "Date : 20 sept 2021",
-                  style: TextStyle(fontSize: 12),
-                ),
-              ),
-              Padding(
-                padding:  EdgeInsets.only(right:  _appConfig.rWP(44)),
-                child: Text("Total mark : 100"),
-              ),
+                padding: EdgeInsets.only(left:8.w,),
+                child: Row(children: [
+                  Text(
+                    "Exam  ",
+                    style:TextStyle(
+                        fontSize: 10.sp,
+                        color: Color(0xFF757575),
+
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "BarlowSemiCondensed-Medium,Barlow"),
+                  ),
+
+                  Text(
+                    "30 July 2021   ",
+                    style:     TextStyle(
+                        fontSize: 11.sp,
+                        color: Color(0xFF2E2E2E),
+
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),
+                  ),
+
+                  Text(
+                    "Total Marks  ",
+                    style:TextStyle(
+                        fontSize: 10.sp,
+                        color: Color(0xFF757575),
+
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "BarlowSemiCondensed-Medium,Barlow"),
+                  ),
+
+                  Text(
+                    "100",
+                    style:     TextStyle(
+                        fontSize: 11.sp,
+                        color: Color(0xFF2E2E2E),
+
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),
+                  ),
+                ],),
+              )
+
             ],
           ),
         ),
         Expanded(
-          child: Container(
-            height: _appConfig.rH(59.3),
-            // color: Colors.grey,
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: 20,
-              itemBuilder: (builder, context) {
-                return Column(
-                  children: [
-                    // Text("hello"),
-                    SizedBox(
-                      width: _appConfig.rW(90),
-                      height: _appConfig.rH(8),
-                      child: Card(
-                        elevation: 3,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                            bottomRight: Radius.circular(10),
+          child: Padding(
+            padding: EdgeInsets.only(top: 2.5.h),
+            child: Container(
+              height: 59.3.h,
+              // color: Colors.grey,
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: 20,
+                itemBuilder: (builder, context) {
+                  return Column(
+                    children: [
+                      // Text("hello"),
+                      SizedBox(
+                        width: 90.w,
+                        height: 8.h,
+                        child: Card(
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                              bottomRight: Radius.circular(10),
+                            ),
                           ),
-                        ),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 8.0),
-                            child: Text("Roll no: 22"),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 2.3.w),
+                              child: RichText(text: TextSpan(text: "Roll no. ",style: TextStyle(
+                                  fontSize: 14.sp,
+                                  color: Color(0xFF757575),
+
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: "BarlowSemiCondensed-Medium,Barlow"),children: [
+                                    TextSpan(text:"123",
+                                      style: TextStyle(
+                                          fontSize: 14.sp,
+                                          color: Color(0xFF2C2C2C),
+                                          letterSpacing: 0.02,
+                                          fontWeight: FontWeight.w600,
+                                          fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),)
+
+
+                              ]),),
+
+
+                            ),
                           ),
                         ),
                       ),
-                    )
-                  ],
-                );
-              },
+                      SizedBox(height: 0.8.h,)
+                    ],
+                  );
+                },
+              ),
             ),
           ),
         ),
