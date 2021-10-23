@@ -216,7 +216,7 @@ class _PendingCardState extends State<PendingCard> {
                                 bottomRight: Radius.circular(10))),
                         child: Container(
                           height: 24.h,
-                          width: 90.w,
+                          width: 93.w,
                           child: Stack(
                             children: [
                               Padding(
@@ -240,7 +240,7 @@ class _PendingCardState extends State<PendingCard> {
                               Padding(
                                 padding: EdgeInsets.only(
                                     top: 2.8.h,
-                                    left: 37.h),
+                                    left: 32.h),
                                 child: GestureDetector(
                                   child: SvgPicture.asset(
                                     "assets/images/Edit_Icon.svg",
@@ -257,7 +257,7 @@ class _PendingCardState extends State<PendingCard> {
                               Padding(
                                 padding: EdgeInsets.only(
                                     top: 2.9.h,
-                                    left: 42.5.h),
+                                    left: 36.5.h),
                                 child: GestureDetector(
                                   child: SvgPicture.asset(
                                     "assets/images/Preview_icon _Assignment.svg",

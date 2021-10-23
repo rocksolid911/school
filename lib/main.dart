@@ -1,9 +1,11 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:sizer/sizer.dart';
 import 'package:path_provider/path_provider.dart' as pathProvider;
+import 'package:device_preview/device_preview.dart';
 import 'package:phygitalz_project_1/Assessment/Student/provider/Questionjson/QuestionProvider.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/providers/alljsondataprovider.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/providers/buttonprovider.dart';
@@ -31,6 +33,13 @@ Future<void> main() async {
   //Hive.registerAdapter(AssignmentTAdapter());
 
   runApp(MyApp());
+
+  //  runApp(
+  //   DevicePreview(
+  //     enabled: !kReleaseMode,
+  //     builder: (context) => MyApp(), // Wrap your app
+  //   ),
+  // );
 }
 // void main(){
 //   runApp(MyApp());
@@ -85,7 +94,8 @@ class _MyAppState extends State<MyApp> {
       child: Sizer(
         builder: (context,orientation, deviceType) {
           return MaterialApp(
-
+            // locale: DevicePreview.locale(context), // Add the locale here
+            // builder: DevicePreview.appBuilder, // Add the builder here
                 home: FutureBuilder(
                   future: getUserData(),
                   builder: (context, snapshot) {

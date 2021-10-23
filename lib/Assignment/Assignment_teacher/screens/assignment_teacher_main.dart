@@ -42,7 +42,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
   @override
   Widget build(BuildContext context) {
     _appConfig = AppConfig(context);
-
+    double data = MediaQuery.of(context).devicePixelRatio;
     return Scaffold(
       drawer: myDrawer(),
       bottomNavigationBar: mYBottomNav(),
@@ -150,7 +150,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(bottom: 5.h, right: 2.h),
+                          padding: EdgeInsets.only(bottom: 5.h, right: 0.5.h),
                           child: IconButton(
                             onPressed: () {},
                             icon: Icon(
@@ -185,7 +185,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                   });
                                 },
                                 height: 5.h,
-                                width: _appConfig.rW(25),
+                                width: 28.w,
                                 startcolor: 0xFFD64575,
                                 midcolor: 0xFFD64570,
                                 endcolor: 0xFF8522A3,
@@ -204,8 +204,8 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                     portfolio = true;
                                   });
                                 },
-                                height: _appConfig.rH(5),
-                                width: _appConfig.rW(25),
+                                height: 5.h,
+                                width: 26.w,
                                 startcolor: 0xFFD64575,
                                 midcolor: 0xFFD64570,
                                 endcolor: 0xFF8522A3,
@@ -224,8 +224,8 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                     portfolio = false;
                                   });
                                 },
-                                height: _appConfig.rH(5),
-                                width: _appConfig.rW(25),
+                                height: 5.h,
+                                width: 28.w,
                                 startcolor: 0xFFD64575,
                                 midcolor: 0xFFD64570,
                                 endcolor: 0xFF8522A3,

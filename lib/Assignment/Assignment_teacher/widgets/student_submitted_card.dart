@@ -72,7 +72,7 @@ class _SubmitCardState extends State<SubmitCard> {
                                     100
                                 ? 28.h
                                 : 24.h,
-                        width: 90.w,
+                        width: 93.w,
                         child: Stack(
                           children: [
                             Padding(
@@ -88,46 +88,87 @@ class _SubmitCardState extends State<SubmitCard> {
                                   "${projectSnap.data[index].s40Subject}",
                                   style: TextStyle(
                                       fontWeight: FontWeight.w900,
-                                      fontSize: 14.sp)),
+                                      fontSize: 10.sp)),
                             ),
 
-                            Padding(
-                              padding: EdgeInsets.only(top: 2.8.h, left: 32.h),
-                              child: GestureDetector(
-                                child: SvgPicture.asset(
-                                  "assets/images/Edit_Icon.svg",
-                                  height: 2.5.h,
-                                  width: 3.h,
-                                ),
-                                onTap: () {
-                                  Navigator.pushNamed(
-                                      this.context, "/create_assignment");
-                                },
-                              ),
-                            ),
+                            // Padding(
+                            //   padding: EdgeInsets.only(top: 2.8.h, left: 32.h),
+                            //   child: GestureDetector(
+                            //     child: SvgPicture.asset(
+                            //       "assets/images/Edit_Icon.svg",
+                            //       height: 2.5.h,
+                            //       width: 3.h,
+                            //     ),
+                            //     onTap: () {
+                            //       Navigator.pushNamed(
+                            //           this.context, "/create_assignment");
+                            //     },
+                            //   ),
+                            // ),
+                            //
+                            // Padding(
+                            //   padding:
+                            //       EdgeInsets.only(top: 2.9.h, left: 36.5.h),
+                            //   child: GestureDetector(
+                            //     child: SvgPicture.asset(
+                            //       "assets/images/Preview_icon _Assignment.svg",
+                            //       height: 2.5.h,
+                            //       width: 3.h,
+                            //     ),
+                            //     onTap: () {
+                            //       Navigator.pushNamed(
+                            //           this.context, "/draft_view");
+                            //     },
+                            //   ),
+                            // ),
+                            // Padding(
+                            //   padding: EdgeInsets.only(top: 2.9.h, left: 42.h),
+                            //   child: SvgPicture.asset(
+                            //     "assets/images/Delete Icon.svg",
+                            //     height: 2.5.h,
+                            //     width: 3.h,
+                            //   ),
+                            // ),
+                            Positioned(
+                              child: Container(
+                                height: 5.h,
+                                width: 24.w,
+                                //color: Colors.blue,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
 
-                            Padding(
-                              padding:
-                                  EdgeInsets.only(top: 2.9.h, left: 36.5.h),
-                              child: GestureDetector(
-                                child: SvgPicture.asset(
-                                  "assets/images/Preview_icon _Assignment.svg",
-                                  height: 2.5.h,
-                                  width: 3.h,
-                                ),
-                                onTap: () {
-                                  Navigator.pushNamed(
-                                      this.context, "/draft_view");
-                                },
+                                  GestureDetector(
+                                      child: SvgPicture.asset(
+                                        "assets/images/Edit_Icon.svg",
+                                        // height: 2.5.h,
+                                        // width: 3.h,
+                                      ),
+                                      onTap: () {
+                                        Navigator.pushNamed(
+                                            this.context, "/create_assignment");
+                                      },
+                                    ),
+                              GestureDetector(
+                                    child: SvgPicture.asset(
+                                      "assets/images/Preview_icon _Assignment.svg",
+                                      // height: 2.5.h,
+                                      // width: 3.h,
+                                    ),
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          this.context, "/draft_view");
+                                    },
+                                  ),
+                              SvgPicture.asset(
+                                    "assets/images/Delete Icon.svg",
+                                    // height: 2.5.h,
+                                    // width: 3.h,
+                                  ),
+                                ],),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 2.9.h, left: 42.h),
-                              child: SvgPicture.asset(
-                                "assets/images/Delete Icon.svg",
-                                height: 2.5.h,
-                                width: 3.h,
-                              ),
+                              top: 1.h,
+                              right: 2.2.w,
                             ),
 
                             Padding(
