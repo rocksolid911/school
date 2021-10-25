@@ -13,61 +13,63 @@ class MyWidget extends StatefulWidget {
   _MyWidgetState createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<MyWidget> with SingleTickerProviderStateMixin{
-  List<Assignment> list ;
-
-
+class _MyWidgetState extends State<MyWidget>
+    with SingleTickerProviderStateMixin {
+  List<Assignment> list;
 
   @override
   Widget build(context) {
     DataProvider provider = Provider.of<DataProvider>(context);
-  //  FilterProvider filterProvider = Provider.of<FilterProvider>(context);
-    double  data = MediaQuery.of(context).devicePixelRatio;
+    //  FilterProvider filterProvider = Provider.of<FilterProvider>(context);
+    double data = MediaQuery.of(context).devicePixelRatio;
     //TODO make it a switch statement for all tabs use
 
-        return FutureBuilder<List<Assignment>>(
-            future: provider.assignmentStatus(widget.status),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                list =  snapshot.data;
-                return Container(
-                 // height: 12.5.h,
-                  height: data>=2.75?12.5.h:14.h,
-                  width: 13.h,
-                  child: new Tab(
-                    //text: 'hello'
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          //radius: data>=2.75?40:30,
-                          radius:30,
-                          child: Text("${list.length}",style: TextStyle(fontSize:  data>=2.75?22.sp:18.sp),),
-                          backgroundColor: widget.clr,
-                        ),
-                        SizedBox(
-                          // height: _appConfig.rH(1),
-                          height: data>=2.75?1.2.h:2.h,
-                        ),
-                        Text(
-                          "${widget.status}",
-                          style: TextStyle(color: Colors.black, fontSize: 13.sp),
-                          maxLines: 1,
-                        ),
-                      ],
+    return FutureBuilder<List<Assignment>>(
+        future: provider.assignmentStatus(widget.status),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            list = snapshot.data;
+            return Container(
+              // height: 12.5.h,
+             // color: Colors.greenAccent,
+              height: data >= 2.75 ? 12.5.h : 14.h,
+              width: 13.h,
+              child: new Tab(
+                //text: 'hello'
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      //radius: data>=2.75?40:30,
+                      radius: 3.7.h,
+                      child: Text(
+                        "${list.length}",
+                        style:
+                            TextStyle(fontSize: data >= 2.75 ? 22.sp : 18.sp),
+                      ),
+                      backgroundColor: widget.clr,
                     ),
-                  ),
-                );
-
-
-
-              } else{
-                return CircularProgressIndicator();
-              }
-            }
-        );
-
-
-
+                    SizedBox(
+                      // height: _appConfig.rH(1),
+                      height:  data > 2.75 &&
+                          MediaQuery.of(context).size.height > 900
+                          ? 2.h
+                          :data>2.75
+                              ? 1.8.h
+                              : 2.h,
+                    ),
+                    Text(
+                      "${widget.status}",
+                      style: TextStyle(color: Colors.black, fontSize: 13.sp),
+                      maxLines: 1,
+                    ),
+                  ],
+                ),
+              ),
+            );
+          } else {
+            return CircularProgressIndicator();
+          }
+        });
   }
 }
 

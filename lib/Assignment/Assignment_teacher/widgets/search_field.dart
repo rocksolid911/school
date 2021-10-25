@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatefulWidget {
-  const SearchBar({Key key}) : super(key: key);
+ final List dropdownitem;
+ final String  labeltext;
+   SearchBar({Key key, this.dropdownitem, this.labeltext}) : super(key: key);
 
   @override
   _SearchBarState createState() => _SearchBarState();
@@ -9,18 +11,20 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   TextEditingController editingController = TextEditingController();
-  var _currencies = [
-    "Food",
-    "Transport",
-    "Personal",
-    "Shopping",
-    "Medical",
-    "Rent",
-    "Movie",
-    "Salary"
-  ];
+  // var _currencies = [
+  //   "Food",
+  //   "Transport",
+  //   "Personal",
+  //   "Shopping",
+  //   "Medical",
+  //   "Rent",
+  //   "Movie",
+  //   "Salary"
+  // ];
 
   var _currentSelectedValue;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +33,8 @@ class _SearchBarState extends State<SearchBar> {
         return InputDecorator(
           isFocused: true,
           decoration: InputDecoration(
-            labelText: "Teacher",
+            contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
+            labelText: widget.labeltext,
             labelStyle: TextStyle(),
             errorStyle: TextStyle(color: Colors.redAccent, fontSize: 16.0),
             hintText: 'Please select expense',
@@ -46,7 +51,7 @@ class _SearchBarState extends State<SearchBar> {
                 color: Colors.pinkAccent,
               ),
               borderRadius: BorderRadius.all(
-                Radius.circular(8.0),
+                Radius.circular(45.0),
               ),
             ),
           ),
@@ -63,7 +68,7 @@ class _SearchBarState extends State<SearchBar> {
                   state.didChange(newValue);
                 });
               },
-              items: _currencies.map((String value) {
+              items: widget.dropdownitem.map((value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),

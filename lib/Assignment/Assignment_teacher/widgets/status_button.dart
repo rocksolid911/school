@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradientbutton/appconfig.dart';
 import 'package:gradientbutton/lineargradientbutton.dart';
+import 'package:sizer/sizer.dart';
 
 class ButtonsWidget extends StatefulWidget {
   const ButtonsWidget({Key key}) : super(key: key);
@@ -21,11 +22,11 @@ class _ButtonsWidgetState extends State<ButtonsWidget> {
       Row(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.only(right: 1.h,top: 1.h,bottom: 1.h),
             //padding: EdgeInsets.zero,
             child: CustomAnimatedButton(
-              height: _appConfig.rH(4.5),
-              width: _appConfig.rW(28),
+              height: 5.h,
+              width: 28.w,
               text: "Accepted",
               startcolor: 0xFFDF003D,
               midcolor: 0xFFDF0075,
@@ -40,14 +41,14 @@ class _ButtonsWidgetState extends State<ButtonsWidget> {
                   selectedButton10A = false;
 
                 });
-              }, fntsize: 12,
+              }, fntsize: 10.sp,
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: CustomAnimatedButton(
-              height: _appConfig.rH(4.5),
-              width: _appConfig.rW(28),
+              height: 5.h,
+              width: 28.w,
               text: "Rejected",
               selected: selectedButton10A,
               startcolor: 0xFFDF003D,
@@ -62,7 +63,7 @@ class _ButtonsWidgetState extends State<ButtonsWidget> {
                   selectedButton10A = true;
 
                 });
-              }, fntsize: 12,
+              }, fntsize: 10.sp,
             ),
           ),
 

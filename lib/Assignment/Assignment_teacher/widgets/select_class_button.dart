@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gradientbutton/appconfig.dart';
 import 'package:gradientbutton/lineargradientbutton.dart';
+import 'package:sizer/sizer.dart';
 
 class SectionButton extends StatefulWidget {
   const SectionButton({Key key}) : super(key: key);
@@ -33,8 +34,8 @@ class _SectionButtonState extends State<SectionButton> {
                   padding: const EdgeInsets.all(8.0),
                   //padding: EdgeInsets.zero,
                   child: CustomAnimatedButton(
-                    height: _appConfig.rH(4.5),
-                    width: _appConfig.rW(15.5),
+                    height: 4.5.h,
+                    width:15.w,
                     text: "10A",
                       startcolor: 0xFFDF003D,
                       midcolor: 0xFFDF0075,
@@ -50,14 +51,14 @@ class _SectionButtonState extends State<SectionButton> {
 
                         portfoliobutton = false;
                       });
-                    }, fntsize: 12,
+                    }, fntsize: 10.sp,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CustomAnimatedButton(
-                    height: _appConfig.rH(4.5),
-                    width: _appConfig.rW(15.5),
+                    height: 4.5.h,
+                    width: 15.w,
                     text: "10B",
                     selected: labrecordButton,
                     startcolor: 0xFFDF003D,
@@ -73,14 +74,14 @@ class _SectionButtonState extends State<SectionButton> {
 
                         portfoliobutton = false;
                       });
-                    }, fntsize: 12,
+                    }, fntsize: 10.sp,
                   ),
                 ),
                 Padding(
                   padding:  EdgeInsets.all( 8.0),
                   child: CustomAnimatedButton(
-                    height: _appConfig.rH(4.5),
-                    width: _appConfig.rW(15.5),
+                    height: 4.5.h,
+                    width: 15.w,
                     text: "9A",
                     selected: portfoliobutton,
                     startcolor: 0xFFDF003D,
@@ -96,7 +97,7 @@ class _SectionButtonState extends State<SectionButton> {
 
                         portfoliobutton = true;
                       });
-                    }, fntsize: 12,
+                    }, fntsize: 10.sp,
                   ),
                 ),
 

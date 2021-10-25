@@ -88,47 +88,10 @@ class _SubmitCardState extends State<SubmitCard> {
                                   "${projectSnap.data[index].s40Subject}",
                                   style: TextStyle(
                                       fontWeight: FontWeight.w900,
-                                      fontSize: 10.sp)),
+                                      fontSize: 12.sp)),
                             ),
 
-                            // Padding(
-                            //   padding: EdgeInsets.only(top: 2.8.h, left: 32.h),
-                            //   child: GestureDetector(
-                            //     child: SvgPicture.asset(
-                            //       "assets/images/Edit_Icon.svg",
-                            //       height: 2.5.h,
-                            //       width: 3.h,
-                            //     ),
-                            //     onTap: () {
-                            //       Navigator.pushNamed(
-                            //           this.context, "/create_assignment");
-                            //     },
-                            //   ),
-                            // ),
-                            //
-                            // Padding(
-                            //   padding:
-                            //       EdgeInsets.only(top: 2.9.h, left: 36.5.h),
-                            //   child: GestureDetector(
-                            //     child: SvgPicture.asset(
-                            //       "assets/images/Preview_icon _Assignment.svg",
-                            //       height: 2.5.h,
-                            //       width: 3.h,
-                            //     ),
-                            //     onTap: () {
-                            //       Navigator.pushNamed(
-                            //           this.context, "/draft_view");
-                            //     },
-                            //   ),
-                            // ),
-                            // Padding(
-                            //   padding: EdgeInsets.only(top: 2.9.h, left: 42.h),
-                            //   child: SvgPicture.asset(
-                            //     "assets/images/Delete Icon.svg",
-                            //     height: 2.5.h,
-                            //     width: 3.h,
-                            //   ),
-                            // ),
+
                             Positioned(
                               child: Container(
                                 height: 5.h,
@@ -194,55 +157,51 @@ class _SubmitCardState extends State<SubmitCard> {
                                           'BarlowSemiCondensed-Medium')),
                             ),
 
-                            Padding(
-                              padding: EdgeInsets.only(
-                                top: projectSnap.data[index]
-                                            .s40AssignmentDetails.length >
-                                        150
-                                    ? 28.h
-                                    : projectSnap.data[index]
-                                                .s40AssignmentDetails.length >
-                                            100
-                                        ? 22.h
-                                        : 19.h,
-                                left: 3.h,
-                              ),
-                              child: Text(
-                                  "Document Name.Pdf ",
-                                  //"${1.2.h}",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 12.sp,
-                                      fontFamily:
-                                          'BarlowSemiCondensed-Medium')),
-                            ),
 
-                            Padding(
-                              padding: EdgeInsets.only(
-                                left: 28.h,
-                                top: projectSnap.data[index]
-                                            .s40AssignmentDetails.length >
-                                        150
-                                    ? 28.h
-                                    : projectSnap.data[index]
-                                                .s40AssignmentDetails.length >
-                                            100
-                                        ? 22.h
-                                        : 19.h,
-                              ),
-                              child: Row(
-                                children: [
-                                  Text("Due ",
+                            Positioned(
+                              child: Container(
+                                height: 3.h,
+                                width: 80.w,
+                                //color: Colors.blue,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Document Name.Pdf ",
+                                      //"${MediaQuery.of(context).devicePixelRatio}",
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w900,
-                                          fontSize: 10.sp,
-                                          color: Colors.grey)),
-                                  Text("20 July 2020",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w900,
-                                          fontSize: 12.sp)),
-                                ],
+                                          color: Colors.black,
+                                          fontSize: 8.sp,
+                                          fontFamily:
+                                          'BarlowSemiCondensed-Medium'),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text("Due ",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w900,
+                                                fontSize: 10.sp,
+                                                color: Colors.grey)),
+                                        Text("20 July 2020",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w900,
+                                                fontSize: 10.sp)),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
+                              // top: 20.h,
+                              // left: 6.w,
+                              left: 6.w,
+                                  top: projectSnap.data[index]
+                                              .s40AssignmentDetails.length >
+                                          150
+                                      ? 28.h
+                                      : projectSnap.data[index]
+                                                  .s40AssignmentDetails.length >
+                                              100
+                                          ? 22.h
+                                          : 19.h,
                             ),
                           ],
                         ),

@@ -99,6 +99,7 @@ class _MyAppState extends State<MyApp> {
                 home: FutureBuilder(
                   future: getUserData(),
                   builder: (context, snapshot) {
+
                     print(snapshot);
                     switch (snapshot.connectionState) {
                       case ConnectionState.none:
@@ -121,12 +122,6 @@ class _MyAppState extends State<MyApp> {
                     }
                   },
                 ),
-                //initialRoute: "/",
-                //  routes: {
-                //    '/login': (context) => LogIn(),
-                // '/HssScreen': (context) => HomeScreenStudent(),
-                //
-                //  },
                 onGenerateRoute: RouteGenerator.generateRoute,
               );
         }

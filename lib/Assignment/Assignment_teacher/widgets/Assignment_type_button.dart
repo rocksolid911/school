@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gradientbutton/appconfig.dart';
 import 'package:gradientbutton/lineargradientbutton.dart';
+import 'package:sizer/sizer.dart';
 
 class TypeAssButton extends StatefulWidget {
   const TypeAssButton({Key key}) : super(key: key);
@@ -30,8 +31,8 @@ class _TypeAssButtonState extends State<TypeAssButton> {
             Row(
               children: [
                 CustomAnimatedButton(
-                  height: _appConfig.rH(5),
-                  width: _appConfig.rW(31),
+                  height: 5.h,
+                  width: 30.w,
                   text: "Home Work",
                   startcolor: 0xFFDF003D,
                   midcolor: 0xFFDF0075,
@@ -47,13 +48,13 @@ class _TypeAssButtonState extends State<TypeAssButton> {
 
                       portfoliobutton = false;
                     });
-                  }, fntsize: 12,
+                  }, fntsize: 10.sp,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CustomAnimatedButton(
-                    height: _appConfig.rH(5),
-                    width: _appConfig.rW(31),
+                    height: 5.h,
+                    width: 30.w,
                     text: "Lab Record",
                     selected: labrecordButton,
                     startcolor: 0xFFDF003D,
@@ -69,13 +70,13 @@ class _TypeAssButtonState extends State<TypeAssButton> {
 
                         portfoliobutton = false;
                       });
-                    }, fntsize: 12,
+                    }, fntsize: 10.sp,
                   ),
                 ),
                 Expanded(
                   child: CustomAnimatedButton(
-                    height: _appConfig.rH(5),
-                    width: _appConfig.rW(29),
+                    height: 5.h,
+                    width: 29.w,
                     text: "Portfolio",
                     selected: portfoliobutton,
                     startcolor: 0xFFDF003D,
@@ -91,7 +92,7 @@ class _TypeAssButtonState extends State<TypeAssButton> {
 
                         portfoliobutton = true;
                       });
-                    }, fntsize: 12,
+                    }, fntsize: 10.sp,
                   ),
                 ),
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradientbutton/appconfig.dart';
 import 'package:gradientbutton/lineargradientbutton.dart';
+import 'package:sizer/sizer.dart';
 
 class SavePublishButton extends StatefulWidget {
   const SavePublishButton({Key key}) : super(key: key);
@@ -31,8 +32,8 @@ class _SavePublishButtonState extends State<SavePublishButton> {
                   padding: const EdgeInsets.all(8.0),
                   //padding: EdgeInsets.zero,
                   child: CustomAnimatedButton(
-                    height: _appConfig.rH(5),
-                    width: _appConfig.rW(24),
+                    height:5.h,
+                    width: 24.w,
                     text: "Cancel",
                     startcolor: 0xFFDF003D,
                     midcolor: 0xFFDF0075,
@@ -48,14 +49,14 @@ class _SavePublishButtonState extends State<SavePublishButton> {
                         publish=false;
 
                       });
-                    }, fntsize: 12,
+                    }, fntsize: 10.sp,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CustomAnimatedButton(
-                    height: _appConfig.rH(5),
-                    width: _appConfig.rW(24),
+                    height: 5.h,
+                    width: 24.w,
                     text: "Save",
                     selected: savedraft,
                     startcolor: 0xFFDF003D,
@@ -71,14 +72,14 @@ class _SavePublishButtonState extends State<SavePublishButton> {
                         publish=false;
 
                       });
-                    }, fntsize: 12,
+                    }, fntsize: 10.sp,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CustomAnimatedButton(
-                    height: _appConfig.rH(5),
-                    width: _appConfig.rW(24),
+                    height: 5.h,
+                    width: 24.w,
                     text: "Publish",
                     selected: publish,
                     startcolor: 0xFFDF003D,
@@ -94,7 +95,7 @@ class _SavePublishButtonState extends State<SavePublishButton> {
                         publish=true;
                         Navigator.pop(context);
                       });
-                    }, fntsize: 12,
+                    }, fntsize: 10.sp,
                   ),
                 ),
                 // ButtonAnimated(),

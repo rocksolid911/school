@@ -1,6 +1,7 @@
 library gradientbutton;
 import 'package:gradientbutton/appconfig.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class CustomAnimatedButton extends StatefulWidget {
   //final String unselectedImagePath;
@@ -82,8 +83,8 @@ late AppConfig _appConfig;
                     ),
                     borderRadius: BorderRadius.circular(widget.radius),
                   ),
-            width: _appConfig.rW(50),
-            height: _appConfig.rH(50),
+            width: 50.h,
+            height: 50.w,
             child: TextButton(
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -117,7 +118,7 @@ late AppConfig _appConfig;
                         color: pressAttention
                             ? widget.activecolor
                             : widget.inactivecolor,
-                        fontFamily: "Roboto",
+                        //fontFamily: "",
                         fontSize: widget.fntsize),
                   ),
                 ),

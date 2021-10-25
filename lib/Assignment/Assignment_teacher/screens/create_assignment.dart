@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:gradientbutton/appconfig.dart';
+import 'package:intl/intl.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/Assignment_type_button.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/s_c_p_button.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/search_field.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/select_class_button.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/select_subject_button.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/search_field.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/selectdatecreate.dart';
+import 'package:sizer/sizer.dart';
 class CreateAssignment extends StatefulWidget {
   const CreateAssignment({Key key}) : super(key: key);
 
@@ -14,7 +17,10 @@ class CreateAssignment extends StatefulWidget {
 }
 
 class _CreateAssignmentState extends State<CreateAssignment> {
+
+
   AppConfig _appConfig;
+
   @override
   Widget build(BuildContext context) {
     _appConfig = AppConfig(context);
@@ -27,7 +33,8 @@ class _CreateAssignmentState extends State<CreateAssignment> {
             borderRadius: BorderRadius.vertical(
               bottom: Radius.circular(30),
             ),
-          ), //this section help to cut the bottom area
+          ),
+          //this section help to cut the bottom area
           // backgroundColor: Colors.pink,
 
           flexibleSpace: ClipRRect(
@@ -37,21 +44,11 @@ class _CreateAssignmentState extends State<CreateAssignment> {
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                // gradient: LinearGradient(
-                //   begin: Alignment.bottomLeft,
-                //   end: Alignment.topRight,
-                //   colors: [
-                //     Color(0xFFDF00AD),
-                //     Color(0xFFDF0075),
-                //   Color(0xFFDF003D),
-                //
-                //   ],
-                // ),
-                gradient:LinearGradient (
+                gradient: LinearGradient(
                     begin: Alignment.bottomLeft,
                     end: Alignment.topRight,
                     colors: [
-                      Color (0xFFDD3B64),
+                      Color(0xFFDD3B64),
                       // Colors.blue,
                       Color(0xFFB017A5),
                       Color(0xFF7E17B0),
@@ -75,49 +72,67 @@ class _CreateAssignmentState extends State<CreateAssignment> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding:  EdgeInsets.only(top:_appConfig.rHP(4),left: _appConfig.rWP(5)),
-                  child: Text("Assignment type",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                  padding: EdgeInsets.only(
+                      top: _appConfig.rHP(4), left: _appConfig.rWP(5)),
+                  child: Text("Assignment type", style: TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),),
                 ),
                 Padding(
-                  padding:  EdgeInsets.all(_appConfig.rWP(3)),
+                  padding: EdgeInsets.all(_appConfig.rWP(3)),
                   child: TypeAssButton(),
                 ),
                 Padding(
-                  padding:  EdgeInsets.only(top:_appConfig.rHP(1),left: _appConfig.rWP(5)),
-                  child: Text("Select The class Section",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                  padding: EdgeInsets.only(
+                      top: _appConfig.rHP(1), left: _appConfig.rWP(5)),
+                  child: Text("Select The class Section", style: TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),),
                 ),
                 Padding(
-                  padding:  EdgeInsets.all(_appConfig.rWP(3)),
+                  padding: EdgeInsets.all(_appConfig.rWP(3)),
                   child: SectionButton(),
                 ),
                 Padding(
-                  padding:  EdgeInsets.only(top:_appConfig.rHP(1),left: _appConfig.rWP(5)),
-                  child: Text("Select Subject",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                  padding: EdgeInsets.only(
+                      top: _appConfig.rHP(1), left: _appConfig.rWP(5)),
+                  child: Text("Select Subject", style: TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),),
                 ),
                 Padding(
-                  padding:  EdgeInsets.all(_appConfig.rWP(4)),
+                  padding: EdgeInsets.all(_appConfig.rWP(4)),
                   child: SubjectButton(),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: SearchBar(),
+                  child: SearchBar(dropdownitem: [
+                    "Linear Algebra",
+                    "Mensuration",
+                    "Geometry",
+                    "GraphTheoy"
+                  ], labeltext: "Select Lesson",),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: SearchBar(),
+                  child: SearchBar(labeltext: "Select Topic",
+                    dropdownitem: [
+                      "Triangle",
+                      "Circle",
+                      "Co-ordinate Geometry",
+                      "LPP"
+                    ],),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: SearchBar(),
+                  child: DateSelect(),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: TextField(
                     decoration: InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
                       labelText: "Teachers feedback",
                       focusedBorder: OutlineInputBorder(
                         // gapPadding: 3,
-                        borderRadius: BorderRadius.circular(16.0),
+                        borderRadius: BorderRadius.circular(45.0),
                         borderSide: BorderSide(
                           color: Colors.greenAccent,
                           width: 2.0,
@@ -125,8 +140,9 @@ class _CreateAssignmentState extends State<CreateAssignment> {
                       ),
                       enabledBorder: OutlineInputBorder(
                         //gapPadding: 3,
-                        borderRadius: BorderRadius.circular(32.0),
-                        borderSide: BorderSide(color: Colors.pinkAccent, width: 1.5),
+                        borderRadius: BorderRadius.circular(45.0),
+                        borderSide: BorderSide(color: Colors.pinkAccent,
+                            width: 1.5),
                       ),
                       hintText: 'Teachers feedback',
                     ),
@@ -154,7 +170,8 @@ class _CreateAssignmentState extends State<CreateAssignment> {
                                 Text(
                                   "Attach corrected Assignment",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 14),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 11.sp),
                                 ),
                                 Padding(
                                   padding:
@@ -177,7 +194,7 @@ class _CreateAssignmentState extends State<CreateAssignment> {
                 ),
                 SizedBox(height: _appConfig.rH(2),),
                 Padding(
-                  padding:  EdgeInsets.only(left: 28.0),
+                  padding: EdgeInsets.only(left: 28.0),
                   child: SavePublishButton(),
                 ),
                 SizedBox(height: _appConfig.rH(2),),
@@ -188,4 +205,6 @@ class _CreateAssignmentState extends State<CreateAssignment> {
       ),
     );
   }
+
+
 }
