@@ -17,13 +17,13 @@ class _CorrectedState extends State<Corrected> {
       children: [
         SizedBox(
           height:18.h,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                    top: 4.h, right: 30.w),
-                child: Text(
+          child: Padding(
+            padding:  EdgeInsets.all(1.5.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
                   "Exam Type : Summative",
                   style: TextStyle(
                       fontSize: 13.2.sp,
@@ -32,10 +32,7 @@ class _CorrectedState extends State<Corrected> {
                       fontWeight: FontWeight.w600,
                       fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 7.8.w),
-                child: Row(
+                Row(
                   children: [
                     Text(
                       "Class  ",
@@ -92,13 +89,10 @@ class _CorrectedState extends State<Corrected> {
                     ),
                   ],
                 ),
-              ),
 
 
 
-              Padding(
-                padding: EdgeInsets.only(left:8.w,),
-                child: Row(children: [
+                Row(children: [
                   Text(
                     "Exam  ",
                     style:TextStyle(
@@ -138,122 +132,119 @@ class _CorrectedState extends State<Corrected> {
                         fontWeight: FontWeight.w600,
                         fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),
                   ),
-                ],),
-              )
+                ],)
 
-            ],
+              ],
+            ),
           ),
         ),
         Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(top: 2.h),
-            child: Container(
-              height: 59.3.h,
-              // color: Colors.grey,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 15,
-                itemBuilder: (builder, context) {
-                  return Column(
-                    children: [
-                      // Text("hello"),
-                      SizedBox(
-                        width: 87.w,
-                        height: 16.h,
-                        child: Card(
-                          elevation: 3,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                              bottomRight: Radius.circular(10),
-                            ),
-                          ),
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                                children: [
-                                Padding(
-                                  padding:  EdgeInsets.only(left:4.w,top:4.h),
-                                  child:RichText(text: TextSpan(text: "Roll no. ",style: TextStyle(
-                                      fontSize: 14.sp,
-                                      color: Color(0xFF757575),
-
-                                      fontWeight: FontWeight.w500,
-                                      fontFamily: "BarlowSemiCondensed-Medium,Barlow"),children: [
-                                    TextSpan(text:"123",
-                                      style: TextStyle(
-                                          fontSize: 14.sp,
-                                          color: Color(0xFF2C2C2C),
-                                          letterSpacing: 0.02,
-                                          fontWeight: FontWeight.w600,
-                                          fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),)
-
-
-                                  ]),),
-                                ),
-                                Padding(
-                                  padding:  EdgeInsets.only(top: 3.h,right: 3.5.w),
-                                  child: Container(height:3.6.h,
-                                    child: ElevatedButton(
-                                      onPressed: () {
-
-                                      },
-                                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0XFF4B71DB)),
-                                          shape: MaterialStateProperty.all<
-                                              RoundedRectangleBorder>(
-                                              RoundedRectangleBorder(
-                                                borderRadius: BorderRadius.circular(22.0),
-                                                //side: BorderSide(color: Colors.red)
-                                              ))),
-                                      child: Text("View"),
-                                    ),
-                                  ),
-                                ),
-                              ],),
-                              Padding(
-                                padding:  EdgeInsets.only(top:1.h,right: 0),
-                                child: Container(
-                                    margin: EdgeInsets.only(left: 4.2.w,right:4.2.w),
-
-                                    child: Divider(color: Colors.black,)),
-                              ),
-                              Padding(
-                                padding:  EdgeInsets.only(left: 4.2.w,),
-                                child: Row(
-                                  children: [  Text("Mark ",style:  TextStyle(
-                                      fontSize: 12.sp,
-                                      color: Color(0xFF2C2C2C),
-                                      letterSpacing: 0.02,
-                                      fontWeight: FontWeight.w600,
-                                      fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),),
-                                    Text("79"  ,style: TextStyle(
-                  fontSize: 14.sp,
-                  color: Color(0xFF2E2E2E),
-                                        letterSpacing: 0.009,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),),  Text("/100",style: TextStyle(
-                                        fontSize: 11.sp,
-                                        color: Color(0xFFB4B8BF),
-                                        letterSpacing: 0.009,
-                                        fontWeight: FontWeight.w600,
-                                        fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),),
-                                  ],
-                                ),
-                              ),
-                            ],
+          child: Container(
+            height: 59.3.h,
+            // color: Colors.grey,
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: 15,
+              itemBuilder: (builder, context) {
+                return Column(
+                  children: [
+                    // Text("hello"),
+                    SizedBox(
+                      width: 90.w,
+                      height: 16.h,
+                      child: Card(
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
                           ),
                         ),
-                      ), SizedBox(height: _appConfig.rH(1),)
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                              children: [
+                              Padding(
+                                padding:  EdgeInsets.only(left:4.w,top:4.h),
+                                child:RichText(text: TextSpan(text: "Roll no. ",style: TextStyle(
+                                    fontSize: 14.sp,
+                                    color: Color(0xFF757575),
 
-                      ,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: "BarlowSemiCondensed-Medium,Barlow"),children: [
+                                  TextSpan(text:"123",
+                                    style: TextStyle(
+                                        fontSize: 14.sp,
+                                        color: Color(0xFF2C2C2C),
+                                        letterSpacing: 0.02,
+                                        fontWeight: FontWeight.w600,
+                                        fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),)
 
 
-                    ],
-                  );
-                },
-              ),
+                                ]),),
+                              ),
+                              Padding(
+                                padding:  EdgeInsets.only(top: 3.h,right: 3.5.w),
+                                child: Container(height:3.6.h,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+
+                                    },
+                                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0XFF4B71DB)),
+                                        shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(22.0),
+                                              //side: BorderSide(color: Colors.red)
+                                            ))),
+                                    child: Text("View"),
+                                  ),
+                                ),
+                              ),
+                            ],),
+                            Padding(
+                              padding:  EdgeInsets.only(top:1.h,right: 0),
+                              child: Container(
+                                  margin: EdgeInsets.only(left: 4.2.w,right:4.2.w),
+
+                                  child: Divider(color: Colors.black,)),
+                            ),
+                            Padding(
+                              padding:  EdgeInsets.only(left: 4.2.w,),
+                              child: Row(
+                                children: [  Text("Mark ",style:  TextStyle(
+                                    fontSize: 12.sp,
+                                    color: Color(0xFF2C2C2C),
+                                    letterSpacing: 0.02,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),),
+                                  Text("79"  ,style: TextStyle(
+                fontSize: 14.sp,
+                color: Color(0xFF2E2E2E),
+                                      letterSpacing: 0.009,
+                fontWeight: FontWeight.w600,
+                fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),),  Text("/100",style: TextStyle(
+                                      fontSize: 11.sp,
+                                      color: Color(0xFFB4B8BF),
+                                      letterSpacing: 0.009,
+                                      fontWeight: FontWeight.w600,
+                                      fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ), SizedBox(height: _appConfig.rH(1),)
+
+                    ,
+
+
+                  ],
+                );
+              },
             ),
           ),
         ),

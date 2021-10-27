@@ -6,12 +6,17 @@ import 'package:sizer/sizer.dart';
 import 'package:gradientbutton/appconfig.dart';
 
 import 'package:provider/provider.dart';
+
 class Draftcard extends StatefulWidget {
   final String type;
   final String term;
   final String stat = "Draft";
 
-  const Draftcard({Key key, this.type, this.term, }) : super(key: key);
+  const Draftcard({
+    Key key,
+    this.type,
+    this.term,
+  }) : super(key: key);
   @override
   _DraftcardState createState() => _DraftcardState();
 }
@@ -26,16 +31,17 @@ class _DraftcardState extends State<Draftcard> {
     return Stack(
       children: [
         Container(
-          height:59.3.h,
+          height: 59.3.h,
           child: FutureBuilder(
-            future: allAssProvider.getByTypeTerm(type: widget.type,term: widget.term,stat: widget.stat),
+            future: allAssProvider.getByTypeTerm(
+                type: widget.type, term: widget.term, stat: widget.stat),
             builder: (context, AsyncSnapshot<List<AllAssJson>> snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting ||
                   snapshot.connectionState == ConnectionState.none ||
                   snapshot.data == null)
                 return Center(child: CircularProgressIndicator());
               else
-              return ListView.builder(
+                return ListView.builder(
                   shrinkWrap: true,
                   itemCount: snapshot.data.length,
                   itemBuilder: (builder, index) {
@@ -50,51 +56,55 @@ class _DraftcardState extends State<Draftcard> {
                                     topRight: Radius.circular(10),
                                     bottomRight: Radius.circular(10))),
                             child: Container(
-                              height:20.5.h,
-                              width: 86.8.w,
+                              height: 20.5.h,
+                              width: 95.w,
                               child: Stack(
                                 children: [
                                   Padding(
-                                      padding: EdgeInsets.only(
-                                          top:1.8.h,
-                                          left:4.w),
-                                      child: SvgPicture.asset(
-                                        "assets/images/Subject_Icon_W.Name_Maths.svg",
-                                        height: 5.h,
-                                        width: 5.w,
-                                      )), // color: HexColor("#f55f5f"),
+                                    padding:
+                                        EdgeInsets.only(top: 1.8.h, left: 4.w),
+                                    child: SvgPicture.asset(
+                                      "assets/images/Subject_Icon_W.Name_Maths.svg",
+                                      height: 5.h,
+                                      width: 5.w,
+                                    ),
+                                  ), // color: HexColor("#f55f5f"),
 
                                   Padding(
-                                    padding: EdgeInsets.only(
-                                        top: 3.5.h,
-                                        left: 16.w),
-                                    child: Text("maths",
-                                        style: TextStyle( color: Color(0xFF2C2C2C),letterSpacing: 0.02,
-                                            fontWeight: FontWeight.w600,fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
-                                            fontSize: 13.3.sp)),
+                                    padding:
+                                        EdgeInsets.only(top: 3.5.h, left: 16.w),
+                                    child: Text(
+                                      "maths",
+                                      style: TextStyle(
+                                          color: Color(0xFF2C2C2C),
+                                          letterSpacing: 0.02,
+                                          fontWeight: FontWeight.w600,
+                                          fontFamily:
+                                              "BarlowSemiCondensed-SemiBold,Barlow",
+                                          fontSize: 13.3.sp),
+                                    ),
                                   ),
 
                                   Padding(
                                       padding: EdgeInsets.only(
-                                          top: 3.5.h,
-                                          left: 66.2.w),
+                                          top: 3.5.h, left: 66.2.w),
                                       child: SvgPicture.asset(
                                           "assets/images/Preview_icon _Assignment.svg")),
 
                                   Padding(
-                                      padding: EdgeInsets.only(
-                                          top: 3.h,
-                                          left:77.w),
-                                      child: SvgPicture.asset(
-                                        "assets/images/Delete Icon.svg",
-                                        height: 3.h,
-                                        width:3.w,
-                                      )),
+                                    padding:
+                                        EdgeInsets.only(top: 3.h, left: 77.w),
+                                    child: SvgPicture.asset(
+                                      "assets/images/Delete Icon.svg",
+                                      height: 3.h,
+                                      width: 3.w,
+                                    ),
+                                  ),
 
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        top:6.8.h,
-                                        ),
+                                      top: 6.8.h,
+                                    ),
                                     child: Divider(
                                       thickness: 0.5,
                                       endIndent: 17,
@@ -104,30 +114,34 @@ class _DraftcardState extends State<Draftcard> {
                                   ),
 
                                   Padding(
-                                    padding: EdgeInsets.only(
-
-                                      top: 9.8.h,left: 5.w
-                                    ),
+                                    padding:
+                                        EdgeInsets.only(top: 9.8.h, left: 5.w),
                                     child: Row(
                                       children: [
-                                        Text("Assignment Name",
-                                            style: TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
-                                                color: Color(0xFF757575),
-                                                fontWeight:FontWeight.w500,
-                                                fontSize: 10.sp)),
+                                        Text(
+                                          "Assignment Name",
+                                          style: TextStyle(
+                                              fontFamily:
+                                                  "BarlowSemiCondensed-Medium,Barlow",
+                                              color: Color(0xFF757575),
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 10.sp),
+                                        ),
 
                                         //  color: Color(0xFF2E2E2E),
                                         Padding(
                                           padding: EdgeInsets.only(
-
-                                              left: 2.w,
+                                            left: 2.w,
                                           ),
                                           child: Text(
-                                              "Unit 1",
-                                              style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
-                                                  color: Color(0xFF2E2E2E),
-                                                  fontWeight:FontWeight.w600,
-                                                  fontSize: 10.sp)),
+                                            "Unit 1",
+                                            style: TextStyle(
+                                                fontFamily:
+                                                    "BarlowSemiCondensed-SemiBold,Barlow",
+                                                color: Color(0xFF2E2E2E),
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 10.sp),
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -135,53 +149,60 @@ class _DraftcardState extends State<Draftcard> {
 
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        top: 12.8.h,
-                                        left: 5.w,
-                                       ),
+                                      top: 12.8.h,
+                                      left: 5.w,
+                                    ),
                                     child: Row(
                                       children: [
                                         Text("Answering Type",
-                                            style: TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                            style: TextStyle(
+                                                fontFamily:
+                                                    "BarlowSemiCondensed-Medium,Barlow",
                                                 color: Color(0xFF757575),
-                                                fontWeight:FontWeight.w500,
+                                                fontWeight: FontWeight.w500,
                                                 fontSize: 10.sp)),
                                         Padding(
-                                          padding: EdgeInsets.only(
-
-                                              left:6.4.w
-                                      ),
+                                          padding: EdgeInsets.only(left: 6.4.w),
                                           child: Text(
-                                              "Answering type",
-                                              style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
-                                                  color: Color(0xFF2E2E2E),
-                                                  fontWeight:FontWeight.w600,
-                                                  fontSize: 10.sp)),
+                                            "Answering type",
+                                            style: TextStyle(
+                                                fontFamily:
+                                                    "BarlowSemiCondensed-SemiBold,Barlow",
+                                                color: Color(0xFF2E2E2E),
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 10.sp),
+                                          ),
                                         ),
                                       ],
                                     ),
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        top: 17.h,
-                                        left: 5.2.w,
-                                      ),
+                                      top: 17.h,
+                                      left: 5.2.w,
+                                    ),
                                     child: Row(
                                       children: [
                                         Text("Class",
-                                            style:  TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                            style: TextStyle(
+                                                fontFamily:
+                                                    "BarlowSemiCondensed-Medium,Barlow",
                                                 color: Color(0xFF757575),
-                                                fontWeight:FontWeight.w500,
+                                                fontWeight: FontWeight.w500,
                                                 fontSize: 10.sp)),
                                         Padding(
                                           padding: EdgeInsets.only(
-
-                                              left: 1.w,
-                                            ),
-                                          child: Text("10",
-                                              style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
-                                                  color: Color(0xFF2E2E2E),
-                                                  fontWeight:FontWeight.w600,
-                                                  fontSize: 11.sp)),
+                                            left: 1.w,
+                                          ),
+                                          child: Text(
+                                            "10",
+                                            style: TextStyle(
+                                                fontFamily:
+                                                    "BarlowSemiCondensed-SemiBold,Barlow",
+                                                color: Color(0xFF2E2E2E),
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 11.sp),
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -189,21 +210,26 @@ class _DraftcardState extends State<Draftcard> {
 
                                   Padding(
                                     padding: EdgeInsets.only(
-                                        top:17.h,
-                                        left: 40.4.w),
+                                        top: 17.h, left: 40.4.w),
                                     child: Row(
                                       children: [
                                         Text("Exam Type",
-                                            style:  TextStyle(fontFamily: "BarlowSemiCondensed-Medium,Barlow",
+                                            style: TextStyle(
+                                                fontFamily:
+                                                    "BarlowSemiCondensed-Medium,Barlow",
                                                 color: Color(0xFF757575),
-                                                fontWeight:FontWeight.w500,
+                                                fontWeight: FontWeight.w500,
                                                 fontSize: 10.sp)),
                                         SizedBox(width: 2.w),
-                                        Text("Summative",
-                                            style:  TextStyle(fontFamily: "BarlowSemiCondensed-SemiBold,Barlow",
-                                                color: Color(0xFF2E2E2E),
-                                                fontWeight:FontWeight.w600,
-                                                fontSize: 11.sp)),
+                                        Text(
+                                          "Summative",
+                                          style: TextStyle(
+                                              fontFamily:
+                                                  "BarlowSemiCondensed-SemiBold,Barlow",
+                                              color: Color(0xFF2E2E2E),
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 11.sp),
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -212,13 +238,13 @@ class _DraftcardState extends State<Draftcard> {
                             ),
                           ),
                           SizedBox(
-                            height:0.8.h,
+                            height: 0.8.h,
                           ),
                         ],
                       ),
                     );
-                  });
-
+                  },
+                );
             },
           ),
         ),

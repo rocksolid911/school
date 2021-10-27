@@ -19,25 +19,22 @@ class _NotCorrectedState extends State<NotCorrected> {
       children: [
         SizedBox(
           height:18.h,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(
-                    top: 4.h, right: 30.w),
-                child: Text(
+          child: Padding(
+            padding:  EdgeInsets.all(1.5.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
                   "Exam Type : Summative",
                   style: TextStyle(
-                      fontSize: 13.2.sp,
+                      fontSize: 12.sp,
                       color: Color(0xFF2C2C2C),
                       letterSpacing: 0.02,
                       fontWeight: FontWeight.w600,
                       fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 7.8.w),
-                child: Row(
+                Row(
                   children: [
                     Text(
                       "Class  ",
@@ -85,7 +82,7 @@ class _NotCorrectedState extends State<NotCorrected> {
 
                     Text(
                       "Mathematics",
-             style:     TextStyle(
+               style:     TextStyle(
                       fontSize: 11.sp,
                       color: Color(0xFF2E2E2E),
 
@@ -94,13 +91,10 @@ class _NotCorrectedState extends State<NotCorrected> {
                     ),
                   ],
                 ),
-              ),
 
 
 
-              Padding(
-                padding: EdgeInsets.only(left:8.w,),
-                child: Row(children: [
+                Row(children: [
                   Text(
                     "Exam  ",
                     style:TextStyle(
@@ -140,68 +134,65 @@ class _NotCorrectedState extends State<NotCorrected> {
                         fontWeight: FontWeight.w600,
                         fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),
                   ),
-                ],),
-              )
+                ],)
 
-            ],
+              ],
+            ),
           ),
         ),
         Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(top: 2.5.h),
-            child: Container(
-              height: 59.3.h,
-              // color: Colors.grey,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 20,
-                itemBuilder: (builder, context) {
-                  return Column(
-                    children: [
-                      // Text("hello"),
-                      SizedBox(
-                        width: 90.w,
-                        height: 8.h,
-                        child: Card(
-                          elevation: 3,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                              bottomRight: Radius.circular(10),
-                            ),
+          child: Container(
+            height: 59.3.h,
+            // color: Colors.grey,
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: 20,
+              itemBuilder: (builder, context) {
+                return Column(
+                  children: [
+                    // Text("hello"),
+                    SizedBox(
+                      width: 90.w,
+                      height: 8.h,
+                      child: Card(
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
                           ),
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Padding(
-                              padding: EdgeInsets.only(left: 2.3.w),
-                              child: RichText(text: TextSpan(text: "Roll no. ",style: TextStyle(
-                                  fontSize: 14.sp,
-                                  color: Color(0xFF757575),
+                        ),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 2.3.w),
+                            child: RichText(text: TextSpan(text: "Roll no. ",style: TextStyle(
+                                fontSize: 14.sp,
+                                color: Color(0xFF757575),
 
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: "BarlowSemiCondensed-Medium,Barlow"),children: [
-                                    TextSpan(text:"123",
-                                      style: TextStyle(
-                                          fontSize: 14.sp,
-                                          color: Color(0xFF2C2C2C),
-                                          letterSpacing: 0.02,
-                                          fontWeight: FontWeight.w600,
-                                          fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),)
-
-
-                              ]),),
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "BarlowSemiCondensed-Medium,Barlow"),children: [
+                                  TextSpan(text:"123",
+                                    style: TextStyle(
+                                        fontSize: 14.sp,
+                                        color: Color(0xFF2C2C2C),
+                                        letterSpacing: 0.02,
+                                        fontWeight: FontWeight.w600,
+                                        fontFamily: "BarlowSemiCondensed-SemiBold,Barlow"),)
 
 
-                            ),
+                            ]),),
+
+
                           ),
                         ),
                       ),
-                      SizedBox(height: 0.8.h,)
-                    ],
-                  );
-                },
-              ),
+                    ),
+                    SizedBox(height: 0.8.h,)
+                  ],
+                );
+              },
             ),
           ),
         ),

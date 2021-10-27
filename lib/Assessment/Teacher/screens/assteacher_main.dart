@@ -68,7 +68,16 @@ class _AssTeacherAState extends State<AssTeacherA>
                       width: _appConfig.rW(100),
                       //color: Colors.pinkAccent,
                       decoration: BoxDecoration(
-                          color: Colors.pinkAccent,
+                          //color: Colors.pinkAccent,
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                            colors: [
+                              Color(0xFFD73865),
+                              Color(0xFFA40DAB),
+                              Color(0xFF8A09B1),
+                            ],
+                          ),
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20),
                               bottomRight: Radius.circular(20))),
@@ -124,17 +133,6 @@ class _AssTeacherAState extends State<AssTeacherA>
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                // CustomButton(
-                                //   bdrRadius: 25,
-                                //   text: "Class",
-                                //   startcolor: 0xFFD64575,
-                                //   midcolor: 0xFFD64570,
-                                //   endcolor: 0xFF8522A3,
-                                //   onTap: (){},
-                                //   selected: true,
-                                //   activecolor: Colors.white,
-                                //   inactivecolor: Color(0xFFD64570),
-                                // ),
                                 CustomAnimatedButton(
                                   text: "Class",
                                   selected: Classs,

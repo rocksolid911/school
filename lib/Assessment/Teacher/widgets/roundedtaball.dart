@@ -3,6 +3,7 @@ import 'package:phygitalz_project_1/Assessment/Teacher/models/allassjson.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/providers/alljsondataprovider.dart';
 
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class RoundedTabAll extends StatefulWidget {
   final int sel;
@@ -21,6 +22,7 @@ class _RoundedTabAllState extends State<RoundedTabAll> {
   List<AllAssJson> list;
   @override
   Widget build(BuildContext context) {
+    double data = MediaQuery.of(context).devicePixelRatio;
     AllAssProvider allAssProvider = Provider.of<AllAssProvider>(context);
     if(widget.sel==1){
       return FutureBuilder(
@@ -35,22 +37,30 @@ class _RoundedTabAllState extends State<RoundedTabAll> {
             list = snapshot.data;
             //print("value:$list");
             return Container(
-              height: 70.0,
+             // height: 70.0,
+              height: data >= 2.75 ? 13.h : 13.h,
               child: new Tab(
                 //text: 'hello'
                 child: Column(
                   children: [
                     CircleAvatar(
-                      radius: 20,
-                      child: Text("${list.length}"),
+                      backgroundColor: widget.clr,
+                      radius: 3.7.h,
+                      child: Text("${list.length}",style: TextStyle(fontSize: data >= 2.75 ? 22.sp : 18.sp),),
                     ),
                     SizedBox(
                       // height: _appConfig.rH(1),
-                      height: 8,
+                     // height: 8,
+                      height:  data > 2.75 &&
+                          MediaQuery.of(context).size.height > 900
+                          ? 2.1.h
+                          :data>2.75
+                          ? 1.8.h
+                          : 2.1.h,
                     ),
                     Text(
                       "${widget.stat}",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 13.sp),
                     ),
                   ],
                 ),
@@ -72,22 +82,28 @@ class _RoundedTabAllState extends State<RoundedTabAll> {
             list = snapshot.data;
             //print("value:$list");
             return Container(
-              height: 70.0,
+              height: data >= 2.75 ? 13.h : 13.h,
               child: new Tab(
                 //text: 'hello'
                 child: Column(
                   children: [
                     CircleAvatar(
-                      radius: 20,
-                      child: Text("${list.length}"),
+                      backgroundColor: widget.clr,
+                      radius: 3.7.h,
+                      child: Text("${list.length}",style: TextStyle(fontSize: data >= 2.75 ? 22.sp : 18.sp),),
                     ),
                     SizedBox(
                       // height: _appConfig.rH(1),
-                      height: 8,
+                      height:  data > 2.75 &&
+                          MediaQuery.of(context).size.height > 900
+                          ? 2.1.h
+                          :data>2.75
+                          ? 1.8.h
+                          : 2.1.h,
                     ),
                     Text(
                       "${widget.stat}",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 13.sp),
                     ),
                   ],
                 ),
@@ -109,22 +125,28 @@ class _RoundedTabAllState extends State<RoundedTabAll> {
             list = snapshot.data;
             //print("value:$list");
             return Container(
-              height: 70.0,
+              height: data >= 2.75 ? 13.h : 13.h,
               child: new Tab(
                 //text: 'hello'
                 child: Column(
                   children: [
                     CircleAvatar(
-                      radius: 20,
-                      child: Text("${list.length}"),
+                      backgroundColor: widget.clr,
+                      radius: 3.7.h,
+                      child: Text("${list.length}",style: TextStyle(fontSize: data >= 2.75 ? 22.sp : 18.sp),),
                     ),
                     SizedBox(
                       // height: _appConfig.rH(1),
-                      height: 8,
+                      height:  data > 2.75 &&
+                          MediaQuery.of(context).size.height > 900
+                          ? 2.1.h
+                          :data>2.75
+                          ? 1.8.h
+                          : 2.1.h,
                     ),
                     Text(
                       "${widget.stat}",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 13.sp),
                     ),
                   ],
                 ),
@@ -146,22 +168,28 @@ class _RoundedTabAllState extends State<RoundedTabAll> {
             list = snapshot.data;
            // print("value:$list");
             return Container(
-              height: 70.0,
+              height: data >= 2.75 ? 13.h : 13.h,
               child: new Tab(
                 //text: 'hello'
                 child: Column(
                   children: [
                     CircleAvatar(
-                      radius: 20,
-                      child: Text("${list.length}"),
+                      backgroundColor: widget.clr,
+                      radius: 3.7.h,
+                      child: Text("${list.length}",style: TextStyle(fontSize: data >= 2.75 ? 22.sp : 18.sp),),
                     ),
                     SizedBox(
                       // height: _appConfig.rH(1),
-                      height: 8,
+                      height:  data > 2.75 &&
+                          MediaQuery.of(context).size.height > 900
+                          ? 2.1.h
+                          :data>2.75
+                          ? 1.8.h
+                          : 2.1.h,
                     ),
                     Text(
                       "${widget.stat}",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 13.sp),
                     ),
                   ],
                 ),
@@ -183,22 +211,29 @@ class _RoundedTabAllState extends State<RoundedTabAll> {
             list = snapshot.data;
            // print("value:$list");
             return Container(
-              height: 70.0,
+             // height: 70.0,
+              height: data >= 2.75 ? 13.h : 13.h,
               child: new Tab(
                 //text: 'hello'
                 child: Column(
                   children: [
                     CircleAvatar(
-                      radius: 20,
-                      child: Text("${list.length}"),
+                      backgroundColor: widget.clr,
+                      radius: 3.7.h,
+                      child: Text("${list.length}",style: TextStyle(fontSize: data >= 2.75 ? 22.sp : 18.sp),),
                     ),
                     SizedBox(
                       // height: _appConfig.rH(1),
-                      height: 8,
+                      height:  data > 2.75 &&
+                          MediaQuery.of(context).size.height > 900
+                          ? 2.1.h
+                          :data>2.75
+                          ? 1.8.h
+                          : 2.1.h,
                     ),
                     Text(
                       "${widget.stat}",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 13.sp),
                     ),
                   ],
                 ),
@@ -220,22 +255,29 @@ class _RoundedTabAllState extends State<RoundedTabAll> {
             list = snapshot.data;
             //print("value:$list");
             return Container(
-              height: 70.0,
+             // height: 70.0,
+              height: data >= 2.75 ? 13.h : 13.h,
               child: new Tab(
                 //text: 'hello'
                 child: Column(
                   children: [
                     CircleAvatar(
-                      radius: 20,
-                      child: Text("${list.length}"),
+                      backgroundColor: widget.clr,
+                      radius: 3.7.h,
+                      child: Text("${list.length}",style: TextStyle(fontSize: data >= 2.75 ? 22.sp : 18.sp),),
                     ),
                     SizedBox(
                       // height: _appConfig.rH(1),
-                      height: 8,
+                      height:  data > 2.75 &&
+                          MediaQuery.of(context).size.height > 900
+                          ? 2.1.h
+                          :data>2.75
+                          ? 1.8.h
+                          : 2.1.h,
                     ),
                     Text(
                       "${widget.stat}",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 13.sp),
                     ),
                   ],
                 ),
@@ -257,22 +299,29 @@ class _RoundedTabAllState extends State<RoundedTabAll> {
             list = snapshot.data;
            // print("value:$list");
             return Container(
-              height: 70.0,
+             // height: 70.0,
+              height: data >= 2.75 ? 13.h : 13.h,
               child: new Tab(
                 //text: 'hello'
                 child: Column(
                   children: [
                     CircleAvatar(
-                      radius: 20,
-                      child: Text("${list.length}"),
+                      backgroundColor: widget.clr,
+                      radius: 3.7.h,
+                      child: Text("${list.length}",style: TextStyle(fontSize: data >= 2.75 ? 22.sp : 18.sp),),
                     ),
                     SizedBox(
                       // height: _appConfig.rH(1),
-                      height: 8,
+                      height:  data > 2.75 &&
+                          MediaQuery.of(context).size.height > 900
+                          ? 2.1.h
+                          :data>2.75
+                          ? 1.8.h
+                          : 2.1.h,
                     ),
                     Text(
                       "${widget.stat}",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 13.sp),
                     ),
                   ],
                 ),
@@ -294,22 +343,28 @@ class _RoundedTabAllState extends State<RoundedTabAll> {
             list = snapshot.data;
             //print("value:$list");
             return Container(
-              height: 70.0,
+              height: data >= 2.75 ? 13.h : 13.h,
               child: new Tab(
                 //text: 'hello'
                 child: Column(
                   children: [
                     CircleAvatar(
-                      radius: 20,
-                      child: Text("${list.length}"),
+                      backgroundColor: widget.clr,
+                      radius: 3.7.h,
+                      child: Text("${list.length}",style: TextStyle(fontSize: data >= 2.75 ? 22.sp : 18.sp),),
                     ),
                     SizedBox(
                       // height: _appConfig.rH(1),
-                      height: 8,
+                      height:  data > 2.75 &&
+                          MediaQuery.of(context).size.height > 900
+                          ? 2.1.h
+                          :data>2.75
+                          ? 1.8.h
+                          : 2.1.h,
                     ),
                     Text(
                       "${widget.stat}",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 13.sp),
                     ),
                   ],
                 ),
@@ -331,22 +386,28 @@ class _RoundedTabAllState extends State<RoundedTabAll> {
             list = snapshot.data;
             //print("value:$list");
             return Container(
-              height: 70.0,
+              height: data >= 2.75 ? 13.h : 13.h,
               child: new Tab(
                 //text: 'hello'
                 child: Column(
                   children: [
                     CircleAvatar(
-                      radius: 20,
-                      child: Text("${list.length}"),
+                      backgroundColor: widget.clr,
+                      radius: 3.7.h,
+                      child: Text("${list.length}",style: TextStyle(fontSize: data >= 2.75 ? 22.sp : 18.sp),),
                     ),
                     SizedBox(
                       // height: _appConfig.rH(1),
-                      height: 8,
+                      height:  data > 2.75 &&
+                          MediaQuery.of(context).size.height > 900
+                          ? 2.1.h
+                          :data>2.75
+                          ? 1.8.h
+                          : 2.1.h,
                     ),
                     Text(
                       "${widget.stat}",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
+                      style: TextStyle(color: Colors.black, fontSize: 13.sp),
                     ),
                   ],
                 ),
