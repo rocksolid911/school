@@ -36,11 +36,11 @@ class _SavePublishButtonState extends State<SavePublishButton> {
                     width: 24.w,
                     text: "Cancel",
                     startcolor: 0xFFDF003D,
-                    midcolor: 0xFFDF0075,
+                    midcolor: 0xFFBA2F74,
                     endcolor: 0xFFDF00AD,
                     radius: _appConfig.rW(9),
                     activecolor: Colors.white,
-                    inactivecolor: Colors.pinkAccent,
+                    inactivecolor: Color(0xFFBA2F74),
                     selected: cancel,
                     onTap: (){
                       setState(() {
@@ -57,14 +57,14 @@ class _SavePublishButtonState extends State<SavePublishButton> {
                   child: CustomAnimatedButton(
                     height: 5.h,
                     width: 24.w,
-                    text: "Save",
+                    text: "Save Draft",
                     selected: savedraft,
                     startcolor: 0xFFDF003D,
-                    midcolor: 0xFFDF0075,
+                    midcolor: 0xFFBA2F74,
                     endcolor: 0xFFDF00AD,
                     radius: _appConfig.rW(9),
                     activecolor: Colors.white,
-                    inactivecolor: Colors.pinkAccent,
+                    inactivecolor: Color(0xFFBA2F74),
                     onTap: (){
                       setState(() {
                         cancel =false;
@@ -83,11 +83,11 @@ class _SavePublishButtonState extends State<SavePublishButton> {
                     text: "Publish",
                     selected: publish,
                     startcolor: 0xFFDF003D,
-                    midcolor: 0xFFDF0075,
+                    midcolor: 0xFFBA2F74,
                     endcolor: 0xFFDF00AD,
                     radius: _appConfig.rW(9),
                     activecolor: Colors.white,
-                    inactivecolor: Colors.pinkAccent,
+                    inactivecolor: Color(0xFFBA2F74),
                     onTap: (){
                       setState(() {
                         cancel =false;

@@ -36,19 +36,19 @@ class _SearchBarState extends State<SearchBar> {
             contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
             labelText: widget.labeltext,
             labelStyle: TextStyle(),
-            errorStyle: TextStyle(color: Colors.redAccent, fontSize: 16.0),
+            errorStyle: TextStyle(color:  Color (0xFFBA2F74), fontSize: 16.0),
             hintText: 'Please select expense',
             border: OutlineInputBorder(
               gapPadding: 0,
               borderRadius: BorderRadius.circular(45.0),
-              borderSide: BorderSide(color: Colors.pinkAccent,),
+              borderSide: BorderSide(color:  Color (0xFFBA2F74),),
 
             ),
 
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 width: 1.5,
-                color: Colors.pinkAccent,
+                color:  Color (0xFFBA2F74),
               ),
               borderRadius: BorderRadius.all(
                 Radius.circular(45.0),
@@ -58,7 +58,7 @@ class _SearchBarState extends State<SearchBar> {
           isEmpty: _currentSelectedValue == '',
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
-              iconEnabledColor: Colors.pinkAccent,
+              iconEnabledColor:  Color (0xFFBA2F74),
               iconSize: 25,
               value: _currentSelectedValue,
               isDense: true,

@@ -30,8 +30,8 @@ class _ReviewAssignmentState extends State<ReviewAssignment> {
         child: SafeArea(
           child: Scaffold(
             appBar: AppBar(
-              title: Text("Assignment Review"),
-              centerTitle: true,
+              title: Text(" Review Assignment"),
+              //centerTitle: true,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
                   bottom: Radius.circular(3.h),
@@ -65,17 +65,18 @@ class _ReviewAssignmentState extends State<ReviewAssignment> {
                 child: Padding(
                   padding:  EdgeInsets.all(2.2.h),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Row(
                         children: [
                           SvgPicture.asset(
-                            "assets/images/Subject_Icon_W.Name_Chemistry.svg",
+                            "assets/images/Zoology-(F).svg",
                             width: 15.h,
                             height: 15.w,
                           ),
                           SizedBox(width: 7.w,),
                           Text(
-                            "Chemistry",
+                            "Zoology",
                             style: TextStyle(
                                 fontSize: 18.sp,
                                 fontWeight: FontWeight.bold,
@@ -110,6 +111,7 @@ class _ReviewAssignmentState extends State<ReviewAssignment> {
                                   ),
                                 ),
                               ),
+                              SizedBox(height: 1.5.h,),
                               Text(
                                 "Vishall23",
                                 style: TextStyle(
@@ -128,6 +130,7 @@ class _ReviewAssignmentState extends State<ReviewAssignment> {
                                   style: TextStyle(fontSize: 12.sp),
                                 ),
                               ),
+                              SizedBox(height: 1.5.h,),
                               Padding(
                                 padding:  EdgeInsets.only(right: 8.h),
                                 child: Text(

@@ -38,11 +38,11 @@ class _SectionButtonState extends State<SectionButton> {
                     width:15.w,
                     text: "10A",
                       startcolor: 0xFFDF003D,
-                      midcolor: 0xFFDF0075,
+                      midcolor: 0xFFBA2F74,
                       endcolor: 0xFFDF00AD,
                     radius: _appConfig.rW(5),
                     activecolor: Colors.white,
-                    inactivecolor: Colors.pinkAccent,
+                    inactivecolor: Color(0xFFBA2F74),
                     selected: homeworkbutton,
                     onTap: (){
                       setState(() {
@@ -62,11 +62,11 @@ class _SectionButtonState extends State<SectionButton> {
                     text: "10B",
                     selected: labrecordButton,
                     startcolor: 0xFFDF003D,
-                    midcolor: 0xFFDF0075,
+                    midcolor: 0xFFBA2F74,
                     endcolor: 0xFFDF00AD,
                     radius: _appConfig.rW(5),
                     activecolor: Colors.white,
-                    inactivecolor: Colors.pinkAccent,
+                    inactivecolor: Color(0xFFBA2F74),
                     onTap: (){
                       setState(() {
                         homeworkbutton = false;
@@ -85,11 +85,11 @@ class _SectionButtonState extends State<SectionButton> {
                     text: "9A",
                     selected: portfoliobutton,
                     startcolor: 0xFFDF003D,
-                    midcolor: 0xFFDF0075,
+                    midcolor: 0xFFBA2F74,
                     endcolor: 0xFFDF00AD,
                     radius: _appConfig.rW(5),
                     activecolor: Colors.white,
-                    inactivecolor: Colors.pinkAccent,
+                    inactivecolor: Color(0xFFBA2F74),
                     onTap: (){
                       setState(() {
                         homeworkbutton = false;

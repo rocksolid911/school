@@ -80,7 +80,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                             children: [
                               Padding(
                                 padding:
-                                    EdgeInsets.only(left: 1.5.h, bottom: 4.h),
+                                    EdgeInsets.only( bottom: 4.h),
                                 child: GestureDetector(
                                   child: Icon(
                                     Icons.arrow_back,
@@ -95,10 +95,10 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                               Padding(
                                 padding: EdgeInsets.only(
                                   bottom: 3.5.h,
-                                  // right: 15.h,
+                                  right: 15.h,
                                 ),
                                 child: Text(
-                                  "Assignment",
+                                  "View Assignment",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 16.sp,
@@ -146,11 +146,11 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                       height: 5.h,
                                       width: 28.w,
                                       startcolor: 0xFFD64575,
-                                      midcolor: 0xFFD64570,
+                                      midcolor: 0xFFBA2F74,
                                       endcolor: 0xFF8522A3,
                                       radius: 25,
                                       activecolor: Colors.white,
-                                      inactivecolor: Color(0xFFD64570),
+                                      inactivecolor:Color (0xFFBA2F74),
                                       fntsize: 10.sp,
                                     ),
                                     CustomAnimatedButton(
@@ -166,11 +166,11 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                       height: 5.h,
                                       width: 26.w,
                                       startcolor: 0xFFD64575,
-                                      midcolor: 0xFFD64570,
+                                      midcolor: 0xFFBA2F74,
                                       endcolor: 0xFF8522A3,
                                       radius: 25,
                                       activecolor: Colors.white,
-                                      inactivecolor: Color(0xFFD64570),
+                                      inactivecolor: Color (0xFFBA2F74),
                                       fntsize: 10.sp,
                                     ),
                                     CustomAnimatedButton(
@@ -186,11 +186,11 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                       height: 5.h,
                                       width: 28.w,
                                       startcolor: 0xFFD64575,
-                                      midcolor: 0xFFD64570,
+                                      midcolor: 0xFFBA2F74,
                                       endcolor: 0xFF8522A3,
                                       radius: 25,
                                       activecolor: Colors.white,
-                                      inactivecolor: Color(0xFFD64570),
+                                      inactivecolor: Color (0xFFBA2F74),
                                       fntsize: 10.sp,
                                     ),
                                   ],
@@ -221,7 +221,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                 indicatorWeight: 4,
                                 indicatorSize: TabBarIndicatorSize.label,
                                 isScrollable: true,
-                                indicatorColor: Colors.purple,
+                                indicatorColor: Color(0xFFBA2F74),
                                 tabs: [
                                   //TODO this mywidget will come from students review service
                                   MyWidget(
@@ -265,7 +265,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                           right: 1.h,
                           bottom: data >= 2.75 ? 0.5.h : 1.2.h),
                       child: SizedBox(
-                        height: data >= 2.75 ? 13.3.h : 15.h,
+                        height: data >= 2.75 ? 11.h : 13.h,
                         width: double.infinity,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -376,8 +376,13 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                         itemCount: 15,
                         itemBuilder: (builder, context) {
                           return Padding(
-                            padding: EdgeInsets.all(2.h),
+                            padding: EdgeInsets.all(1.2.h),
                             child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),),
                               elevation: 8,
                               child: Container(
                                 //color: Colors.blue,
@@ -385,14 +390,14 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                 width: 80.w,
                                 //color: Colors.yellow,
                                 child: Padding(
-                                  padding: EdgeInsets.all(1.h),
+                                  padding: EdgeInsets.all(1.2.h),
                                   child: Row(
                                     children: [
                                       CircleAvatar(
                                         // backgroundColor: Colors.green,
                                         backgroundImage: AssetImage(
                                             "assets/images/profile_img.jpeg"),
-                                        radius: 5.h,
+                                        radius: 4.h,
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(
@@ -400,6 +405,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                           left: 2.5.h,
                                         ),
                                         child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
                                           children: [
                                             Text(
                                               "Lisa Bannet",
@@ -410,7 +416,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                                   fontWeight: FontWeight.w600,
                                                   color: Colors.grey),
                                             ),
-                                            SizedBox(height: 1.2.h),
+                                            SizedBox(height: 0.5.h),
                                             Row(
                                               children: [
                                                 Text(
@@ -458,7 +464,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                           right: 1.h,
                           bottom: data >= 2.75 ? 0.5.h : 1.2.h),
                       child: SizedBox(
-                        height: data >= 2.75 ? 13.3.h : 15.h,
+                        height: data >= 2.75 ? 11.h : 13.h,
                         width: double.infinity,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -571,20 +577,25 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                           return Padding(
                             padding: EdgeInsets.all(2.h),
                             child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),),
                               elevation: 6,
                               child: Container(
                                 height: 12.h,
                                 width: 80.w,
                                 //color: Colors.yellow,
                                 child: Padding(
-                                  padding: EdgeInsets.all(1.h),
+                                  padding: EdgeInsets.all(1.2.h),
                                   child: Row(
                                     children: [
                                       CircleAvatar(
                                         // backgroundColor: Colors.green,
                                         backgroundImage: AssetImage(
                                             "assets/images/profile_img.jpeg"),
-                                        radius: 5.h,
+                                        radius: 4.h,
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(
@@ -630,7 +641,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 10.h),
+                                        padding: EdgeInsets.only(left: data<2.75?20.h:14.h),
                                         child: GestureDetector(
                                           child: SvgPicture.asset(
                                             "assets/images/Pen_Icon_Assignment.svg",
@@ -664,7 +675,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                           right: 1.h,
                           bottom: data >= 2.75 ? 0.5.h : 1.2.h),
                       child: SizedBox(
-                        height: data >= 2.75 ? 13.3.h : 15.h,
+                        height: data >= 2.75 ? 11.h : 13.h,
                         width: double.infinity,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -777,13 +788,18 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                           return Padding(
                             padding: EdgeInsets.all(2.h),
                             child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomRight: Radius.circular(10))),
                               elevation: 6,
                               child: Container(
-                                height: 20.h,
+                                height: 22.h,
                                 width: 80.w,
                                 //color: Colors.yellow,
                                 child: Padding(
-                                  padding: EdgeInsets.all(1.h),
+                                  padding: EdgeInsets.all(1.2.h),
                                   child: Column(
                                     children: [
                                       Column(
@@ -847,7 +863,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                               ),
                                               Padding(
                                                 padding: EdgeInsets.only(
-                                                    top: 1.h, left: 7.h),
+                                                    top: 1.2.h, left: 9.h),
                                                 child: Column(
                                                   children: [
                                                     Text(
@@ -911,7 +927,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                           right: 1.h,
                           bottom: data >= 2.75 ? 0.5.h : 1.2.h),
                       child: SizedBox(
-                        height: data >= 2.75 ? 13.3.h : 15.h,
+                        height: data >= 2.75 ? 11.h : 13.h,
                         width: double.infinity,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -1024,13 +1040,18 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                           return Padding(
                             padding: EdgeInsets.all(2.h),
                             child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomRight: Radius.circular(10))),
                               elevation: 6,
                               child: Container(
-                                height: 20.h,
+                                height: 22.h,
                                 width: 80.w,
                                 //color: Colors.yellow,
                                 child: Padding(
-                                  padding: EdgeInsets.all(1.h),
+                                  padding: EdgeInsets.all(1.2.h),
                                   child: Column(
                                     children: [
                                       Column(
@@ -1094,7 +1115,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                               ),
                                               Padding(
                                                 padding: EdgeInsets.only(
-                                                    top: 1.h, left: 7.h),
+                                                    top: 1.h, left: data<2.5?13.h:9.h),
                                                 child: Column(
                                                   children: [
                                                     Text(

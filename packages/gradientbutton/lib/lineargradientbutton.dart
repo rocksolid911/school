@@ -91,7 +91,7 @@ late AppConfig _appConfig;
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(widget.radius),
                     side: BorderSide(
-                      color: Colors.pinkAccent,
+                      color:Color(0xFFBA2F74),
                     ),
                   ),
                 ),

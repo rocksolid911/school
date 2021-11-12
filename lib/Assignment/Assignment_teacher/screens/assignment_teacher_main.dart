@@ -120,7 +120,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                               children: [
                                 Padding(
                                   padding:
-                                      EdgeInsets.only(left: 2.h, bottom: 4.h),
+                                      EdgeInsets.only(left: 2.h, bottom: 3.5.h),
                                   child: GestureDetector(
                                     child: Icon(
                                       Icons.sort,
@@ -134,7 +134,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                 ),
                                 Padding(
                                   padding:
-                                      EdgeInsets.only(bottom: 5.h, right: 10.h),
+                                      EdgeInsets.only(bottom: 4.5.h, right: 10.h),
                                   child: Text(
                                     "Assignment",
                                     style: TextStyle(
@@ -186,11 +186,11 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                         height: 5.h,
                                         width: 28.w,
                                         startcolor: 0xFFD64575,
-                                        midcolor: 0xFFD64570,
+                                        midcolor: 0xFFBA2F74,
                                         endcolor: 0xFF8522A3,
                                         radius: 25,
                                         activecolor: Colors.white,
-                                        inactivecolor: Color(0xFFD64570),
+                                        inactivecolor: Color(0xFFBA2F74),
                                         fntsize: 10.sp,
                                       ),
                                       CustomAnimatedButton(
@@ -206,11 +206,11 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                         height: 5.h,
                                         width: 26.w,
                                         startcolor: 0xFFD64575,
-                                        midcolor: 0xFFD64570,
+                                        midcolor: 0xFFBA2F74,
                                         endcolor: 0xFF8522A3,
                                         radius: 25,
                                         activecolor: Colors.white,
-                                        inactivecolor: Color(0xFFD64570),
+                                        inactivecolor: Color(0xFFBA2F74),
                                         fntsize: 10.sp,
                                       ),
                                       CustomAnimatedButton(
@@ -226,11 +226,11 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                         height: 5.h,
                                         width: 28.w,
                                         startcolor: 0xFFD64575,
-                                        midcolor: 0xFFD64570,
+                                        midcolor: 0xFFBA2F74,
                                         endcolor: 0xFF8522A3,
                                         radius: 25,
                                         activecolor: Colors.white,
-                                        inactivecolor: Color(0xFFD64570),
+                                        inactivecolor: Color(0xFFBA2F74),
                                         fntsize: 10.sp,
                                       ),
                                     ],
@@ -268,15 +268,15 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                                   tabs: [
                                     MyWidget(
                                       status: "Draft",
-                                      clr: Colors.pinkAccent,
-                                    ),
-                                    MyWidget(
-                                      status: "Pending",
-                                      clr: Colors.amberAccent,
+                                      clr: Color(0xFFFE8B3B),
                                     ),
                                     MyWidget(
                                       status: "Published",
-                                      clr: Colors.green,
+                                      clr: Color(0xFF088521),
+                                    ),
+                                    MyWidget(
+                                      status: "Closed",
+                                      clr: Color(0xFFF23814),
                                     )
                                   ],
                                   controller: controller,

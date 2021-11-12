@@ -30,11 +30,11 @@ class _SubjectButtonState extends State<SubjectButton> {
           width: _appConfig.rW(24),
           text: "Math",
           startcolor: 0xFFDF00AD,
-          midcolor: 0xFFDF0075,
+          midcolor: 0xFFBA2F74,
           endcolor: 0xFFDF003D,
           radius: _appConfig.rW(5),
           activecolor: Colors.white,
-          inactivecolor: Colors.pinkAccent,
+          inactivecolor:Color(0xFFBA2F74),
           selected: homeworkbutton,
           onTap: (){
             setState(() {
@@ -51,11 +51,11 @@ class _SubjectButtonState extends State<SubjectButton> {
           text: "English",
           selected: labrecordButton,
           startcolor: 0xFFDF00AD,
-          midcolor: 0xFFDF0075,
+          midcolor: 0xFFBA2F74,
           endcolor: 0xFFDF003D,
           radius: _appConfig.rW(5),
           activecolor: Colors.white,
-          inactivecolor: Colors.pinkAccent,
+          inactivecolor:Color(0xFFBA2F74),
           onTap: (){
             setState(() {
               homeworkbutton = false;
@@ -71,11 +71,11 @@ class _SubjectButtonState extends State<SubjectButton> {
           text: "Physics",
           selected: portfoliobutton,
           startcolor: 0xFFDF00AD,
-          midcolor: 0xFFDF0075,
+          midcolor: 0xFFBA2F74,
           endcolor: 0xFFDF003D,
           radius: _appConfig.rW(5),
           activecolor: Colors.white,
-          inactivecolor: Colors.pinkAccent,
+          inactivecolor:Color(0xFFBA2F74),
           onTap: (){
             setState(() {
               homeworkbutton = false;
@@ -91,11 +91,11 @@ class _SubjectButtonState extends State<SubjectButton> {
           text: "Chemistry",
           selected: portfoliobutton,
           startcolor: 0xFFDF00AD,
-          midcolor: 0xFFDF0075,
+          midcolor: 0xFFBA2F74,
           endcolor: 0xFFDF003D,
           radius: _appConfig.rW(5),
           activecolor: Colors.white,
-          inactivecolor: Colors.pinkAccent,
+          inactivecolor:Color(0xFFBA2F74),
           onTap: (){
             setState(() {
               homeworkbutton = false;

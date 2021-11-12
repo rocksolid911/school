@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.1+7
+version: 1.0.1+9
 
 environment:
   sdk: ">=2.10.0 <3.0.0"
@@ -141,6 +141,32 @@ flutter:
     - assets/images/Subject_Icon_Zoology.svg
     - assets/images/Union 1.jpg
     - assets/images/AppBarWidth450.jpg
+    - assets/images/Accountancy_(F).svg
+    - assets/images/Bilology_(F).svg
+    - assets/images/BioTech(F).svg
+    - assets/images/BusinessStudy(F).svg
+    - assets/images/CarnaticMelodic_(F).svg
+    - assets/images/CarnaticPrecussion(F).svg
+    - assets/images/CarnaticVocal_(F).svg
+    - assets/images/Chemistry_(F).svg
+    - assets/images/Dance_(F).svg
+    - assets/images/Drawing_(F).svg
+    - assets/images/Economics_(F).svg
+    - assets/images/EngineeringGraphics_(F).svg
+    - assets/images/English_(F).svg
+    - assets/images/Enterpreneuership_(F).svg
+    - assets/images/Geography(F).svg
+    - assets/images/Hindi(F).svg
+    - assets/images/History_(F).svg
+    - assets/images/InfoPractise_(F).svg
+    - assets/images/LegalStudy(F).svg
+    - assets/images/Music(F).svg
+    - assets/images/Physcology(F).svg
+    - assets/images/PoliticalScience(F).svg
+    - assets/images/Sanskrit(F).svg
+    - assets/images/Sports(F).svg
+    - assets/images/Tamil_(F).svg
+    - assets/images/Zoology-(F).svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

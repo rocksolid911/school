@@ -23,11 +23,11 @@ class _DateSelectState extends State<DateSelect> {
         contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(45),
-          borderSide: BorderSide(color: Colors.pinkAccent,),
+          borderSide: BorderSide(color: Color (0xFFBA2F74),),
         ),
         enabledBorder:OutlineInputBorder(
           borderRadius: BorderRadius.circular(45),
-          borderSide: BorderSide(color: Colors.pinkAccent,),
+          borderSide: BorderSide(color: Color (0xFFBA2F74),),
         ) ,
       ),
       focusNode: AlwaysDisabledFocusNode(),
@@ -48,12 +48,13 @@ class _DateSelectState extends State<DateSelect> {
           return Theme(
             data: ThemeData.dark().copyWith(
               colorScheme: ColorScheme.dark(
-                primary: Colors.deepPurple,
+                primary: Color (0xFFBA2F74),
                 onPrimary: Colors.white,
                 surface: Colors.blueGrey,
-                onSurface: Colors.yellow,
+                onSurface: Colors.black,
               ),
-              dialogBackgroundColor: Colors.blue[500],
+              //dialogBackgroundColor: Colors.blue[500],
+              dialogBackgroundColor: Colors.white
             ),
             child: child,
           );

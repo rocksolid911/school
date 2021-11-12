@@ -32,11 +32,11 @@ class _SaveCancelState extends State<SaveCancel> {
                 width: 22.w,
                 text: "Cancel",
                 startcolor: 0xFFDF003D,
-                midcolor: 0xFFDF0075,
+                midcolor: 0xFFBA2F74,
                 endcolor: 0xFFDF00AD,
                 radius: _appConfig.rW(9),
                 activecolor: Colors.white,
-                inactivecolor: Colors.pinkAccent,
+                inactivecolor: Color (0xFFBA2F74),
                 selected: selectedButton10B,
                 onTap: (){
                   setState(() {
@@ -52,14 +52,14 @@ class _SaveCancelState extends State<SaveCancel> {
               child: CustomAnimatedButton(
                 height: 5.h,
                 width: 22.w,
-                text: "Save",
+                text: "Publish",
                 selected: selectedButton10A,
                 startcolor: 0xFFDF003D,
-                midcolor: 0xFFDF0075,
+                midcolor: 0xFFBA2F74,
                 endcolor: 0xFFDF00AD,
                 radius: _appConfig.rW(9),
                 activecolor: Colors.white,
-                inactivecolor: Colors.pinkAccent,
+                inactivecolor: Color (0xFFBA2F74),
                 onTap: (){
                   setState(() {
                     selectedButton10B = false;

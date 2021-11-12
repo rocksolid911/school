@@ -32,14 +32,14 @@ Future<void> main() async {
   Hive.init(directory.path);
   //Hive.registerAdapter(AssignmentTAdapter());
 
-//  runApp(MyApp());
+runApp(MyApp());
 
-   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => MyApp(), // Wrap your app
-    ),
-  );
+   // runApp(
+   //   DevicePreview(
+   //     enabled: !kReleaseMode,
+   //    builder: (context) => MyApp(), // Wrap your app
+   //   ),
+   // );
 }
 // void main(){
 //   runApp(MyApp());
@@ -94,8 +94,8 @@ class _MyAppState extends State<MyApp> {
       child: Sizer(
         builder: (context,orientation, deviceType) {
           return MaterialApp(
-            locale: DevicePreview.locale(context), // Add the locale here
-            builder: DevicePreview.appBuilder, // Add the builder here
+            // locale: DevicePreview.locale(context), // Add the locale here
+            // builder: DevicePreview.appBuilder, // Add the builder here
                 home: FutureBuilder(
                   future: getUserData(),
                   builder: (context, snapshot) {

@@ -39,7 +39,7 @@ class _TypeAssButtonState extends State<TypeAssButton> {
                   endcolor: 0xFFDF00AD,
                   radius: _appConfig.rW(5),
                   activecolor: Colors.white,
-                  inactivecolor: Colors.pinkAccent,
+                  inactivecolor: Color(0xFFBA2F74),
                   selected: homeworkbutton,
                   onTap: (){
                     setState(() {
@@ -62,7 +62,7 @@ class _TypeAssButtonState extends State<TypeAssButton> {
                     endcolor: 0xFFDF00AD,
                     radius: _appConfig.rW(5),
                     activecolor: Colors.white,
-                    inactivecolor: Colors.pinkAccent,
+                    inactivecolor: Color(0xFFBA2F74),
                     onTap: (){
                       setState(() {
                         homeworkbutton = false;
@@ -84,7 +84,7 @@ class _TypeAssButtonState extends State<TypeAssButton> {
                     endcolor: 0xFFDF00AD,
                     radius: _appConfig.rW(5),
                     activecolor: Colors.white,
-                    inactivecolor: Colors.pinkAccent,
+                    inactivecolor: Color(0xFFBA2F74),
                     onTap: (){
                       setState(() {
                         homeworkbutton = false;

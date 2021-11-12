@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gradientbutton/appconfig.dart';
 import 'package:intl/intl.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/Assignment_type_button.dart';
@@ -27,7 +28,10 @@ class _CreateAssignmentState extends State<CreateAssignment> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Assignment Review"),
+          title: Padding(
+            padding:  EdgeInsets.only(right: 8.h),
+            child: Text("Edit/Create Assignment"),
+          ),
           centerTitle: true,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
@@ -50,7 +54,7 @@ class _CreateAssignmentState extends State<CreateAssignment> {
                     colors: [
                       Color(0xFFDD3B64),
                       // Colors.blue,
-                      Color(0xFFB017A5),
+                      Color(0xFFBA2F74),
                       Color(0xFF7E17B0),
                     ]
                 ),
@@ -141,7 +145,7 @@ class _CreateAssignmentState extends State<CreateAssignment> {
                       enabledBorder: OutlineInputBorder(
                         //gapPadding: 3,
                         borderRadius: BorderRadius.circular(45.0),
-                        borderSide: BorderSide(color: Colors.pinkAccent,
+                        borderSide: BorderSide(color:  Color (0xFFBA2F74),
                             width: 1.5),
                       ),
                       hintText: 'Teachers feedback',
@@ -177,10 +181,15 @@ class _CreateAssignmentState extends State<CreateAssignment> {
                                   padding:
                                   EdgeInsets.only(right: _appConfig.rWP(2.5)),
                                   //TODO make it an iconbutton
-                                  child: Icon(
-                                    Icons.edit,
-                                    color: Colors.pinkAccent,
-                                    size: _appConfig.rH(4),
+                                  // child: Icon(
+                                  //   Icons.edit,
+                                  //   color: Colors.pinkAccent,
+                                  //   size: _appConfig.rH(4),
+                                  // ),
+                                  child: SvgPicture.asset(
+                                    "assets/images/Attach_Icon.svg",
+                                    // height: 5.h,
+                                    // width: 5.h,
                                   ),
                                 ),
                               ],
